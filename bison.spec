@@ -5,7 +5,7 @@ Summary(pl):	GNU generator sk³adni
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
 Version:	1.27
-Release:	3
+Release:	4
 Copyright:	GPL
 Group:		Development/Tools
 Group(pl):	Programowanie/Narzêdzia
@@ -49,7 +49,7 @@ sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 %patch1 -p1
 
 %build
-autoconf
+aclocal && autoconf
     %configure --datadir=%{_datadir}/bison 
 make
 
@@ -59,13 +59,16 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 make \
     prefix=$RPM_BUILD_ROOT%{_prefix} \
+    datadir=$RPM_BUILD_ROOT%{_datadir}/bison \
     bindir=$RPM_BUILD_ROOT%{_bindir} \
     mandir=$RPM_BUILD_ROOT%{_mandir} \
     infodir=$RPM_BUILD_ROOT%{_infodir} \
-    datadir=$RPM_BUILD_ROOT%{_datadir}/bison \
     install
 
+strip $RPM_BUILD_ROOT%{_bindir}/*
+
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
+
 gzip -9nf $RPM_BUILD_ROOT%{_datadir}/{info/*,man/{man1/*,pl/man1/*}}
 
 %post
@@ -84,16 +87,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 
-%{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
+%{_mandir}/man1/*
 %{_infodir}/*info*
-%{_datadir}/bison/*
+%{_datadir}/bison
 
 %changelog
-* Mon Jun 07 1999 Jan Rêkorajski <baggins@pld.org.pl>
-  [1.27-3]
-- spec cleanup
-
 * Tue Jun 01 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
 -  FHS 2.0
 
