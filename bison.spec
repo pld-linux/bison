@@ -4,14 +4,14 @@ Summary(fr):	Générateur d'analyseur lexical de GNU
 Summary(pl):	GNU generator sk³adni 
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
-Version:	1.28
-Release:	8
+Version:	1.29
+Release:	1
 License:	GPL
 Group:		Development/Tools
 Group(de):	Entwicklung/Werkzeuge
 Group(fr):	Development/Outils
 Group(pl):	Programowanie/Narzêdzia
-Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.bz2
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
@@ -61,7 +61,9 @@ süreci sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 %patch1 -p1
 
 %build
-autoconf
+# needs at least autoconf 2.52c
+#aclocal
+#autoconf
 %configure
 %{__make}
 
@@ -71,7 +73,7 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
+#install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -86,6 +88,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%lang(pl) %{_mandir}/pl/man1/*
+#%lang(pl) %{_mandir}/pl/man1/*
 %{_infodir}/*info*
 %{_datadir}/*
