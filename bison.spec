@@ -5,7 +5,7 @@ Summary(pl):	GNU generator sk³adni
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
 Version:	1.27
-Release:	2
+Release:	3
 Copyright:	GPL
 Group:		Development/Tools
 Group(pl):	Programowanie/Narzêdzia
@@ -49,19 +49,21 @@ sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 %patch1 -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure %{_target} \
-	--prefix=/usr
+autoconf
+    %configure --datadir=%{_datadir}/bison 
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
-make install prefix=$RPM_BUILD_ROOT/usr
+make \
+    prefix=$RPM_BUILD_ROOT%{_prefix} \
+    datadir=$RPM_BUILD_ROOT%{_datadir}/bison \
+    install
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
-gzip -9nf $RPM_BUILD_ROOT/usr/{info/bison.info*,man/{man1/*,pl/man1/*}}
+gzip -9nf $RPM_BUILD_ROOT%{_datadir}/{info/*,man/{man1/*,pl/man1/*}}
 
 %post
 /sbin/install-info %{_infodir}/bison.info.gz /etc/info-dir
@@ -81,11 +83,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
-
-%{_datadir}/*
 %{_infodir}/*info*
 
 %changelog
+* Tue Jun 01 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
+-  FHS 2.0
+
 * Thu Apr 22 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.27-2]
 - recompiles on new rpm.
