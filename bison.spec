@@ -9,7 +9,7 @@ Summary(tr):	GNU ayrЩЧtЩrЩcЩ Эreticisi
 Summary(uk):	Bison - генератор парсер╕в GNU
 Name:		bison
 Version:	1.875
-Release:	4
+Release:	5
 License:	GPL
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
