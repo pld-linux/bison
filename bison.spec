@@ -12,7 +12,7 @@ Version:	1.35
 Release:	5
 License:	GPL
 Group:		Development/Tools
-Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
