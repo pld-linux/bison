@@ -9,7 +9,7 @@ Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Summary(uk):	Bison - ÇÅÎÅÒÁÔÏÒ ÐÁÒÓÅÒ¦× GNU
 Name:		bison
 Version:	1.875
-Release:	7
+Release:	8
 License:	GPL
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
@@ -21,6 +21,7 @@ Patch2:		%{name}-code_start-segv.patch
 BuildRequires:	automake
 BuildRequires:	m4 >= 1.4
 BuildRequires:	texinfo
+Requires:	m4 >= 1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		pkgdatadir	%{_datadir}/bison
