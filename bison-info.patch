@@ -10,7 +10,7 @@ diff -Nru bison-1.28/doc/bison.texinfo bison-1.28.new/doc/bison.texinfo
 -END-INFO-DIR-ENTRY
 +@dircategory Programming tools:
 +@direntry
-+* bison: (bison)			The GNU parser generator
++* bison: (bison).			The GNU parser generator
 +@end direntry
  @end format
  @end ifinfo
