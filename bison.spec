@@ -1,10 +1,12 @@
 Summary:	A GNU general-purpose parser generator
 Summary(de):	GNU-Parser-Generator
+Summary(es):	Generador de parser de la GNU
 Summary(fr):	Générateur d'analyseur lexical de GNU
 Summary(pl):	GNU generator sk³adni 
+Summary(pt_BR):	Gerador de parser da GNU
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
-Version:	1.31
+Version:	1.32
 Release:	1
 License:	GPL
 Group:		Development/Tools
@@ -39,6 +41,12 @@ kompatibel ist. Viele Programme benutzen ihn als Teil des
 Aufbauvorgangs. Bison wird nur auf Systemen benötigt, die zur
 Entwicklung verwendet werden.
 
+%description -l es
+Este es el creador de análisis gramatical GNU más compatible con yacc.
+Varios programas lo utilizan como parte del su proceso de
+construcción. Bison solamente hace falta en sistemas que se usan para
+desarrollo.
+
 %description -l fr
 Générateur d'analyseur lexical de GNU compatible avec yacc. De
 nombreux programmes l'utilisent dans leur phase de construction. Bison
@@ -50,6 +58,12 @@ sk³adni, który jest odpowiednikiem programu yacc. Wiele programów
 podczas kompilacji potrzebuje tego programu aby proces budowy plików
 binarnych przebiega³ prawid³owo. Bison jest potrzebny tylko w
 systemach, w których prowadzone s± ró¿nego rodzaju kompilacje.
+
+%description -l pt_BR
+Este é o gerador de análise gramatical GNU que é mais compatível com
+yacc. Vários programas o utilizam como parte do seu processo de
+construção. Bison é somente necessário em sistemas que são usados para
+desenvolvimento.
 
 %description -l tr
 byacc bir yacc ayrýþtýrýcýsýdýr. Pek çok program tarafýndan, kurulum
@@ -75,6 +89,8 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -84,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%files
+%files %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
