@@ -10,12 +10,6 @@ Version:	1.33
 Release:	2
 License:	GPL
 Group:		Development/Tools
-Group(de):	Entwicklung/Werkzeuge
-Group(es):	Desarrollo/Herramientas
-Group(fr):	Development/Outils
-Group(pl):	Programowanie/NarzЙdzia
-Group(pt):	Desenvolvimento/Ferramentas
-Group(ru):	Разработка/Инструменты
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
