@@ -8,7 +8,7 @@ Summary(ru):	Bison - генератор парсеров GNU
 Summary(tr):	GNU ayrЩЧtЩrЩcЩ Эreticisi
 Summary(uk):	Bison - генератор парсер╕в GNU
 Name:		bison
-Version:	1.34
+Version:	1.35
 Release:	1
 License:	GPL
 Group:		Development/Tools
