@@ -13,6 +13,7 @@ Release:	4
 License:	GPL
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
+# Source0-md5: b7f8027b249ebd4dd0cc948943a71af0
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-unused.patch
