@@ -4,8 +4,8 @@ Summary(fr):	Générateur d'analyseur lexical de GNU
 Summary(pl):	GNU generator sk³adni 
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
-Version:	1.27
-Release:	4
+Version:	1.28
+Release:	1
 Copyright:	GPL
 Group:		Development/Tools
 Group(pl):	Programowanie/Narzêdzia
@@ -16,6 +16,8 @@ Patch1:		bison-man.patch
 Prereq:		/sbin/install-info
 Buildroot:	/tmp/%{name}-%{version}-root
 Obsoletes:	yacc
+
+%define		_datadir	/usr/share/misc
 
 %description
 This is the GNU parser generator which is mostly compatible with yacc. Many
@@ -49,27 +51,19 @@ sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 %patch1 -p1
 
 %build
-aclocal && autoconf
-    %configure --datadir=%{_datadir}/bison 
+LDFLAGS="-s"; export LDFLAGS
+%configure
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
-make \
-    prefix=$RPM_BUILD_ROOT%{_prefix} \
-    datadir=$RPM_BUILD_ROOT%{_datadir}/bison \
-    bindir=$RPM_BUILD_ROOT%{_bindir} \
-    mandir=$RPM_BUILD_ROOT%{_mandir} \
-    infodir=$RPM_BUILD_ROOT%{_infodir} \
-    install
-
-strip $RPM_BUILD_ROOT%{_bindir}/*
+make install DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
 
-gzip -9nf $RPM_BUILD_ROOT%{_datadir}/{info/*,man/{man1/*,pl/man1/*}}
+gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*,%{_mandir}/{man1/*,pl/man1/*}}
 
 %post
 /sbin/install-info %{_infodir}/bison.info.gz /etc/info-dir
@@ -90,9 +84,13 @@ rm -rf $RPM_BUILD_ROOT
 %lang(pl) %{_mandir}/pl/man1/*
 %{_mandir}/man1/*
 %{_infodir}/*info*
-%{_datadir}/bison
+%{_datadir}/*
 
 %changelog
+* Wed Jul  7 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.28-1]
+- more rpm macros.
+
 * Tue Jun 01 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
 -  FHS 2.0
 
