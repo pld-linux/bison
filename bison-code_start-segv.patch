@@ -1,0 +1,46 @@
+--- bison-1.875/src/scan-gram.l.orig	2002-12-31 03:26:51.000000000 +0100
++++ bison-1.875/src/scan-gram.l	2004-01-14 22:04:21.275226859 +0100
+@@ -43,6 +43,7 @@
+       scanner_cursor.file = current_file;		\
+       scanner_cursor.line = 1;				\
+       scanner_cursor.column = 1;			\
++      code_start = scanner_cursor;			\
+     }							\
+   while (0)
+ 
+@@ -138,8 +139,10 @@
+   /* Location of most recent identifier, when applicable.  */
+   location id_loc IF_LINT (= *loc);
+ 
+-  /* Where containing code started, when applicable.  */
+-  boundary code_start IF_LINT (= loc->start);
++  /* Where containing code started, when applicable.  Its initial
++     value is relevant only when yylex is invoked in the SC_EPILOGUE
++     start condition.  */
++  boundary code_start = scanner_cursor;
+ 
+   /* Where containing comment or string or character literal started,
+      when applicable.  */
+--- bison-1.875/src/scan-gram.c.orig	2003-01-01 10:15:09.000000000 +0100
++++ bison-1.875/src/scan-gram.c	2004-01-14 22:05:08.186798095 +0100
+@@ -738,6 +738,7 @@
+       scanner_cursor.file = current_file;		\
+       scanner_cursor.line = 1;				\
+       scanner_cursor.column = 1;			\
++      code_start = scanner_cursor;			\
+     }							\
+   while (0)
+ 
+@@ -989,8 +990,10 @@
+   /* Location of most recent identifier, when applicable.  */
+   location id_loc IF_LINT (= *loc);
+ 
+-  /* Where containing code started, when applicable.  */
+-  boundary code_start IF_LINT (= loc->start);
++  /* Where containing code started, when applicable.  Its initial
++     value is relevant only when yylex is invoked in the SC_EPILOGUE
++     start condition.  */
++  boundary code_start = scanner_cursor;
+ 
+   /* Where containing comment or string or character literal started,
+      when applicable.  */
