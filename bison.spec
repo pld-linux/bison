@@ -43,10 +43,8 @@ sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 %setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" ./configure \
-	--prefix=/usr \
-	--datadir=/usr/lib
-make
+./configure --prefix=/usr
+make "CFLAGS=$RPM_OPT_FLAGS" LDFLAGS="-s"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -69,10 +67,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644, root, root, 755)
 %attr(755, root, root) /usr/bin/*
 %attr(644, root,  man) /usr/man/man1/*
-/usr/lib/*
+/usr/share/*
 /usr/info/*info*
 
 %changelog
+* Fri Nov  6 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.25-6]
+- fixed passing $RPM_OPT_FLAGS,
+- bisona.{simple,hairy} moved to /usr/share.
+
 * Sun Jun 14 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
   [1.25-5]
 - added pl translation,
