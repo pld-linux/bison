@@ -21,36 +21,37 @@ Obsoletes:	yacc
 
 %description
 Bison is a general purpose parser generator which converts a grammar
-description for an LALR context-free grammar into a C program to parse that
-grammar. Bison can be used to develop a wide range of language parsers,
-from ones used in simple desk calculators to complex programming languages.
-Bison is upwardly compatible with Yacc, so any correctly written Yacc
-grammar should work with Bison without any changes. If you know Yacc, you
-shouldn't have any trouble using Bison (but you do need to be very
-proficient in C programming to be able to use Bison). Many programs use
-Bison as part of their build process. Bison is only needed on systems that
-are used for development.
+description for an LALR context-free grammar into a C program to parse
+that grammar. Bison can be used to develop a wide range of language
+parsers, from ones used in simple desk calculators to complex
+programming languages. Bison is upwardly compatible with Yacc, so any
+correctly written Yacc grammar should work with Bison without any
+changes. If you know Yacc, you shouldn't have any trouble using Bison
+(but you do need to be very proficient in C programming to be able to
+use Bison). Many programs use Bison as part of their build process.
+Bison is only needed on systems that are used for development.
 
 %description -l de
-Dies ist der GNU-Parser-Generator, der größtenteils mit yacc kompatibel
-ist. Viele Programme benutzen ihn als Teil des Aufbauvorgangs. Bison wird
-nur auf Systemen benötigt, die zur Entwicklung verwendet werden.
+Dies ist der GNU-Parser-Generator, der größtenteils mit yacc
+kompatibel ist. Viele Programme benutzen ihn als Teil des
+Aufbauvorgangs. Bison wird nur auf Systemen benötigt, die zur
+Entwicklung verwendet werden.
 
 %description -l fr
-Générateur d'analyseur lexical de GNU compatible avec yacc. De nombreux
-programmes l'utilisent dans leur phase de construction. Bison ne sert que
-sur les systèmes utilisés pour le développement.
+Générateur d'analyseur lexical de GNU compatible avec yacc. De
+nombreux programmes l'utilisent dans leur phase de construction. Bison
+ne sert que sur les systèmes utilisés pour le développement.
 
 %description -l pl
-W pakiecie znajduje siê implementacja GNU generatora analizatora sk³adni,
-który jest odpowiednikiem programu yacc. Wiele programów podczas kompilacji
-potrzebuje tego programu aby proces budowy plików binarnych przebiega³
-prawid³owo. Bison jest potrzebny tylko w systemach, w których prowadzone s±
-ró¿nego rodzaju kompilacje.
+W pakiecie znajduje siê implementacja GNU generatora analizatora
+sk³adni, który jest odpowiednikiem programu yacc. Wiele programów
+podczas kompilacji potrzebuje tego programu aby proces budowy plików
+binarnych przebiega³ prawid³owo. Bison jest potrzebny tylko w
+systemach, w których prowadzone s± ró¿nego rodzaju kompilacje.
 
 %description -l tr
-byacc bir yacc ayrýþtýrýcýsýdýr. Pek çok program tarafýndan, kurulum süreci
-sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
+byacc bir yacc ayrýþtýrýcýsýdýr. Pek çok program tarafýndan, kurulum
+süreci sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 
 %prep
 %setup -q
