@@ -5,7 +5,7 @@ Summary(pl):	GNU generator sk³adni
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
 Version:	1.28
-Release:	7
+Release:	8
 License:	GPL
 Group:		Development/Tools
 Group(de):	Entwicklung/Werkzeuge
