@@ -1,0 +1,37 @@
+diff -Nru bison-1.27/bison.texinfo bison-1.27.new/bison.texinfo
+--- bison-1.27/bison.texinfo	Sat Feb 27 02:14:48 1999
++++ bison-1.27.new/bison.texinfo	Sat Feb 27 02:16:37 1999
+@@ -37,9 +37,10 @@
+ 
+ @ifinfo
+ @format
+-START-INFO-DIR-ENTRY
+-* bison: (bison).	GNU Project parser generator (yacc replacement).
+-END-INFO-DIR-ENTRY
++@dircategory Programming tools:
++@direntry
++* bison: (bison)			The GNU parser generator.
++@end direntry
+ @end format
+ @end ifinfo
+ 
+@@ -126,6 +127,19 @@
+ @page
+ 
+ @node Top, Introduction, (dir), (dir)
++@top bison
++
++   "Bison" is a general-purpose parser generator that converts a
++grammar description for an LALR(1) context-free grammar into a C
++program to parse that grammar.  Once you are proficient with Bison, you
++may use it to develop a wide range of language parsers, from those used
++in simple desk calculators to complex programming languages.
++
++   Bison is upward compatible with Yacc: all properly-written Yacc
++grammars ought to work with Bison with no change.  Anyone familiar with
++Yacc should be able to use Bison with little trouble.  You need to be
++fluent in C programming in order to use Bison or to understand this
++manual.
+ 
+ @ifinfo
+ This manual documents version @value{VERSION} of Bison.
