@@ -7,7 +7,7 @@ Summary(pt_BR):	Gerador de parser da GNU
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
 Version:	1.33
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Tools
 Group(de):	Entwicklung/Werkzeuge
@@ -79,6 +79,7 @@ süreci sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 # needs at least autoconf 2.52g
 #aclocal
 #autoconf
+find | xargs touch
 %configure
 %{__make} \
 	pkgdatadir=%{_datadir}/misc
