@@ -6,13 +6,16 @@ Summary(pl):	GNU generator sk³adni
 Summary(pt_BR):	Gerador de parser da GNU
 Summary(tr):	GNU ayrıştırıcı üreticisi
 Name:		bison
-Version:	1.32
+Version:	1.33
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Group(de):	Entwicklung/Werkzeuge
+Group(es):	Desarrollo/Herramientas
 Group(fr):	Development/Outils
 Group(pl):	Programowanie/Narzêdzia
+Group(pt):	Desenvolvimento/Ferramentas
+Group(ru):	òÁÚÒÁÂÏÔËÁ/éÎÓÔÒÕÍÅÎÔÙ
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
