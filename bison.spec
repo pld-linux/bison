@@ -9,15 +9,18 @@ Summary(tr):	GNU ayrЩЧtЩrЩcЩ Эreticisi
 Summary(uk):	Bison - генератор парсер╕в GNU
 Name:		bison
 Version:	1.875
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-unused.patch
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	yacc
+
+%define		pkgdatadir	%{_datadir}/bison
 
 %description
 Bison is a general purpose parser generator which converts a grammar
@@ -77,12 +80,13 @@ Bison - це парсер, здеб╕льшого сум╕сний з yacc. Багато програм
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 %configure
 %{__make} \
-	pkgdatadir=%{_datadir}/misc
+	pkgdatadir=%{pkgdatadir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -90,7 +94,7 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	pkgdatadir=%{_datadir}/misc
+	pkgdatadir=%{pkgdatadir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
 
@@ -108,7 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/bison
-%{_datadir}/misc/*
+%{pkgdatadir}
 %{_libdir}/lib*.a
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
