@@ -59,6 +59,9 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 make \
     prefix=$RPM_BUILD_ROOT%{_prefix} \
+    bindir=$RPM_BUILD_ROOT%{_bindir} \
+    mandir=$RPM_BUILD_ROOT%{_mandir} \
+    infodir=$RPM_BUILD_ROOT%{_infodir} \
     datadir=$RPM_BUILD_ROOT%{_datadir}/bison \
     install
 
@@ -87,6 +90,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/bison/*
 
 %changelog
+* Mon Jun 07 1999 Jan Rêkorajski <baggins@pld.org.pl>
+  [1.27-3]
+- spec cleanup
+
 * Tue Jun 01 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
 -  FHS 2.0
 
