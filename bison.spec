@@ -49,7 +49,7 @@ make "CFLAGS=$RPM_OPT_FLAGS" LDFLAGS="-s"
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install prefix=$RPM_BUILD_ROOT/usr datadir=$RPM_BUILD_ROOT/usr/lib
+make install prefix=$RPM_BUILD_ROOT/usr
 gzip -n -9f $RPM_BUILD_ROOT/usr/info/bison.info*
 
 %post
@@ -74,6 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 * Fri Nov  6 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.25-6]
 - fixed passing $RPM_OPT_FLAGS,
+- modified pl translation,
 - bisona.{simple,hairy} moved to /usr/share.
 
 * Sun Jun 14 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
