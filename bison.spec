@@ -5,9 +5,10 @@ Summary(pl):	GNU generator sk³adni
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
 Version:	1.28
-Release:	3
-Copyright:	GPL
+Release:	4
+License:	GPL
 Group:		Development/Tools
+Group(fr):	Development/Outils
 Group(pl):	Programowanie/Narzêdzia
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Source1:	bison.1.pl
@@ -22,22 +23,19 @@ Obsoletes:	yacc
 %description
 Bison is a general purpose parser generator which converts a grammar
 description for an LALR context-free grammar into a C program to parse that
-grammar. Bison can be used to develop a wide range of language parsers, from
-ones used in simple desk calculators to complex programming languages. 
+grammar. Bison can be used to develop a wide range of language parsers,
+from ones used in simple desk calculators to complex programming languages.
 Bison is upwardly compatible with Yacc, so any correctly written Yacc
 grammar should work with Bison without any changes. If you know Yacc, you
 shouldn't have any trouble using Bison (but you do need to be very
 proficient in C programming to be able to use Bison). Many programs use
 Bison as part of their build process. Bison is only needed on systems that
 are used for development.
-                                                                                                              
-If your system will be used for C development, you should install Bison
-since it is used to build many C programs.
 
 %description -l de
-Dies ist der GNU-Parser-Generator, der größtenteils mit yacc kompatibel ist. Viele
-Programme benutzen ihn als Teil des Aufbauvorgangs. Bison wird nur auf
-Systemen benötigt, die zur Entwicklung verwendet werden.
+Dies ist der GNU-Parser-Generator, der größtenteils mit yacc kompatibel
+ist. Viele Programme benutzen ihn als Teil des Aufbauvorgangs. Bison wird
+nur auf Systemen benötigt, die zur Entwicklung verwendet werden.
 
 %description -l fr
 Générateur d'analyseur lexical de GNU compatible avec yacc. De nombreux
@@ -76,10 +74,10 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*,%{_mandir}/{man1/*,pl/man1/*}}
 
 %post
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
