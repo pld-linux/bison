@@ -14,7 +14,6 @@ Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Source1:	bison.1.pl
 Patch0:		bison-info.patch
 Patch1:		bison-man.patch
-Prereq:		/usr/sbin/fix-info-dir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	yacc
 
@@ -74,10 +73,10 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*,%{_mandir}/{man1/*,pl/man1/*}}
 
 %post
-%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
-%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
