@@ -9,7 +9,7 @@ Summary(tr):	GNU ayrЩЧtЩrЩcЩ Эreticisi
 Summary(uk):	Bison - генератор парсер╕в GNU
 Name:		bison
 Version:	1.875
-Release:	6
+Release:	7
 License:	GPL
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
@@ -17,6 +17,7 @@ Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-unused.patch
+Patch2:		%{name}-code_start-segv.patch
 BuildRequires:	automake
 BuildRequires:	m4 >= 1.4
 BuildRequires:	texinfo
@@ -84,6 +85,7 @@ Bison - це парсер, здеб╕льшого сум╕сний з yacc. Багато програм
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 rm -f config/config.sub
