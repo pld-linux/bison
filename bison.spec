@@ -5,15 +5,16 @@ Summary(pl):	GNU generator sk³adni
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
 Version:	1.28
-Release:	5
+Release:	6
 License:	GPL
 Group:		Development/Tools
+Group(de):	Entwicklung/Werkzeuge
 Group(fr):	Development/Outils
 Group(pl):	Programowanie/Narzêdzia
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
-Source1:	bison.1.pl
-Patch0:		bison-info.patch
-Patch1:		bison-man.patch
+Source1:	%{name}.1.pl
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-man.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	yacc
 
@@ -59,7 +60,6 @@ süreci sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 %patch1 -p1
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 %configure
 %{__make}
 
@@ -70,8 +70,6 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
-
-gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*,%{_mandir}/{man1/*,pl/man1/*}}
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -84,10 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-
 %attr(755,root,root) %{_bindir}/*
-
-%lang(pl) %{_mandir}/pl/man1/*
 %{_mandir}/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
 %{_infodir}/*info*
 %{_datadir}/*
