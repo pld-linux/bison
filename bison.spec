@@ -76,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+
 %attr(755,root,root) /usr/bin/*
 
 /usr/man/man1/*
@@ -111,17 +112,6 @@ rm -rf $RPM_BUILD_ROOT
   [1.25-5]
 - added pl translation,
 - macro %%{name}-%%{version} in Source,
-- minor modifications of spec file.
-
-* Fri Apr 24 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Wed Apr 08 1998 Cristian Gafton <gafton@redhat.com>
-- built for Manhattan
-- added build root
-
-* Wed Oct 15 1997 Donnie Barnes <djb@redhat.com>
-- various spec file cleanups
-
-* Mon Jun 02 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
+- minor modifications of spec file,
+- build against GNU libc-2.1,
+- start at RH spec.
