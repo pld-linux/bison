@@ -1,19 +1,20 @@
-Summary:     GNU parser generator
-Summary(de): GNU-Parser-Generator
-Summary(fr): Générateur d'analyseur lexical de GNU
-Summary(pl): GNU generator sk³adni 
-Summary(tr): GNU ayrýþtýrýcý üreticisi
-Name:        bison
-Version:     1.25
-Release:     8
-Copyright:   GPL
-Group:       Development/Tools
-Source0:     ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
-Source1:     bison.1.pl
-Patch0:      bison-info.patch
-Prereq:      /sbin/install-info
-Buildroot:   /tmp/%{name}-%{version}-root
-Obsoletes:   yacc
+Summary:	GNU parser generator
+Summary(de):	GNU-Parser-Generator
+Summary(fr):	Générateur d'analyseur lexical de GNU
+Summary(pl):	GNU generator sk³adni 
+Summary(tr):	GNU ayrýþtýrýcý üreticisi
+Name:		bison
+Version:	1.27
+Release:	1
+Copyright:	GPL
+Group:		Development/Tools
+Group(pl):	Programowanie/Narzêdzia
+Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Source1:	bison.1.pl
+Patch0:		bison-info.patch
+Prereq:		/sbin/install-info
+Buildroot:	/tmp/%{name}-%{version}-root
+Obsoletes:	yacc
 
 %description
 This is the GNU parser generator which is mostly compatible with yacc. Many
@@ -46,9 +47,10 @@ sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 %patch0 -p1
 
 %build
+CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure \
 	--prefix=/usr
-make "CFLAGS=$RPM_OPT_FLAGS" LDFLAGS="-s"
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -71,14 +73,22 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
-%attr(755, root, root) /usr/bin/*
-%attr(644, root,  man) /usr/man/man1/*
-%lang(pl) %attr(644, root,  man) /usr/man/pl/man1/*
+%defattr(644,root,root,755)
+%attr(755,root,root) /usr/bin/*
+
+/usr/man/man1/*
+%lang(pl) /usr/man/pl/man1/*
+
 /usr/share/*
 /usr/info/*info*
 
 %changelog
+* Fri Feb 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.27-1]
+- added Group(pl),
+- changed way passing $RPM_OPT_FLAGS -s to LDFLAGS,
+- removed man group from man pages.
+
 * Tue Dec 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.25-8]
 - standarized {un}registering info pages (added bison-info.patch).
