@@ -1,5 +1,6 @@
 .\" {PTM/LK/0.1/29-09-1998/"generator parserów"}
 .\" T³umaczenie: 29-09-1998 £ukasz Kowalczyk (lukow@tempac.okwf.fuw.edu.pl)
+.\" $Id$
 .TH bison 1 local
 .SH NAZWA
 bison \- generator parserów w wersji GNU (zastêpuje program yacc)
@@ -28,7 +29,7 @@ bison \- generator parserów w wersji GNU (zastêpuje program yacc)
 ] [
 .BI \-o " plik-wyj¶ciowy"
 ] [
-.BI \-\-output-file= plik-wuj¶ciowy
+.BI \-\-output-file= plik-wyj¶ciowy
 ] [
 .BI \-p " przedrostek"
 ] [
@@ -73,7 +74,7 @@ zgodnie z konwencj± programu
 .IR yacc .
 W przeciwieñstwie do plików tworzonych przez program
 .IR yacc ,
-pliki wuj¶ciwe nie maj± sta³ego przedrostka nazw, lecz u¿ywaj± przedrostka 
+pliki wyj¶ciowe nie maj± sta³ego przedrostka nazw, lecz u¿ywaj± przedrostka 
 nazwy pliku wej¶ciowego. Na przyk³ad, plik z opisem gramatyki o nazwie
 .B parse.y
 pos³u¿y do stworzenia parsera w pliku o nazwie
@@ -118,7 +119,7 @@ Nazwy s± tworzone zgodnie z nastêpuj±cym wzorem:
 .ns
 .TP
 .B \-\-defines
-Utwórz dodatkowy plik z definicjami makrointrukcji dla nazw symboli
+Utwórz dodatkowy plik z definicjami makroinstrukcji dla nazw symboli
 terminalnych zdefiniowanych w pliku gramatyki oraz z definicj± typu warto¶ci
 semantycznej
 .BR YYSTYPE ,
@@ -255,7 +256,7 @@ z nazwy pliku zawieraj±cego parser i dodanie
 .sp
 Na przyk³ad, je¿eli plikiem wej¶ciowym jest
 .BR foo.y ,
-wówczas plik zawierj±cy parser nosi nazwê
+wówczas plik zawieraj±cy parser nosi nazwê
 .BR foo.tab.c .
 Plik z opisem stanów bêdzie nazwany
 .BR foo.output .
@@ -294,7 +295,7 @@ i
 Ta opcja powoduje na¶ladowanie konwencji programu 
 .I yacc
 nazywania plików.
-Poni¿szy skrypt mo¿e byc u¿ywany jako program
+Poni¿szy skrypt mo¿e byæ u¿ywany jako program
 .IR yacc :
 .sp
 .RS
