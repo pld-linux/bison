@@ -21,8 +21,6 @@ BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	yacc
 
-%define		_datadir	/usr/share/misc
-
 %description
 Bison is a general purpose parser generator which converts a grammar
 description for an LALR context-free grammar into a C program to parse
@@ -79,13 +77,16 @@ süreci sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 #aclocal
 #autoconf
 %configure
-%{__make}
+%{__make} \
+	pkgdatadir=%{_datadir}/misc
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	pkgdatadir=%{_datadir}/misc
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
 
@@ -106,4 +107,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
 %{_infodir}/*info*
-%{_datadir}/*
+%{_datadir}/misc/*
