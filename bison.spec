@@ -4,7 +4,7 @@ Summary(fr):	Générateur d'analyseur lexical de GNU
 Summary(pl):	GNU generator sk³adni 
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
-Version:	1.29
+Version:	1.31
 Release:	1
 License:	GPL
 Group:		Development/Tools
@@ -61,7 +61,7 @@ süreci sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 %patch1 -p1
 
 %build
-# needs at least autoconf 2.52c
+# needs at least autoconf 2.52g
 #aclocal
 #autoconf
 %configure
