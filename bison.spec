@@ -15,7 +15,7 @@ Source1:	bison.1.pl
 Patch0:		bison-info.patch
 Patch1:		bison-man.patch
 Prereq:		/usr/sbin/fix-info-dir
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	yacc
 
 %define		_datadir	/usr/share/misc
