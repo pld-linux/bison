@@ -5,7 +5,7 @@ Summary(pl):	GNU generator sk³adni
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
 Version:	1.28
-Release:	6
+Release:	7
 License:	GPL
 Group:		Development/Tools
 Group(de):	Entwicklung/Werkzeuge
@@ -15,6 +15,7 @@ Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	yacc
 
@@ -60,6 +61,7 @@ süreci sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 %patch1 -p1
 
 %build
+autoconf
 %configure
 %{__make}
 
