@@ -5,7 +5,7 @@ Summary(pl):	GNU generator sk³adni
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
 Version:	1.27
-Release:	1
+Release:	2
 Copyright:	GPL
 Group:		Development/Tools
 Group(pl):	Programowanie/Narzêdzia
@@ -67,7 +67,7 @@ gzip -9nf $RPM_BUILD_ROOT/usr/{info/bison.info*,man/{man1/*,pl/man1/*}}
 /sbin/install-info /usr/info/bison.info.gz /etc/info-dir
 
 %preun
-if [ $1 = 0 ]; then
+if [ "$1" = "0" ]; then
 	/sbin/install-info --delete /usr/info/bison.info.gz /etc/info-dir
 fi
 
@@ -86,6 +86,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/info/*info*
 
 %changelog
+* Thu Apr 22 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.27-2]
+- recompiles on new rpm.
+
 * Fri Feb 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.27-1]
 - added Group(pl),
