@@ -17,6 +17,7 @@ Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-unused.patch
+BuildRequires:	automake
 BuildRequires:	m4 >= 1.4
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -85,6 +86,8 @@ Bison - це парсер, здеб╕льшого сум╕сний з yacc. Багато програм
 %patch1 -p1
 
 %build
+rm -f config/config.sub
+cp /usr/share/automake/config.sub config/
 %configure
 %{__make} \
 	pkgdatadir=%{pkgdatadir}
