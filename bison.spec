@@ -73,7 +73,10 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-#install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
+install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -81,13 +84,10 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-#%lang(pl) %{_mandir}/pl/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
 %{_infodir}/*info*
 %{_datadir}/*
