@@ -9,7 +9,7 @@ Summary(tr):	GNU ayrЩЧtЩrЩcЩ Эreticisi
 Summary(uk):	Bison - генератор парсер╕в GNU
 Name:		bison
 Version:	1.35
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Tools
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
@@ -86,6 +86,7 @@ Bison - це парсер, здеб╕льшого сум╕сний з yacc. Багато програм
 #aclocal
 #autoconf
 find | xargs touch
+rm -f doc/bison.info*
 %configure
 %{__make} \
 	pkgdatadir=%{_datadir}/misc
