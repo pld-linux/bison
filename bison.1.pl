@@ -309,9 +309,9 @@ D³ugie nazwy opcji mog± byæ równie¿ poprzedzane przez
 W przysz³o¶ci ta mo¿liwo¶æ ma byæ usuniêta, poniewa¿ jest niekompatybilna ze
 standardem POSIX.2
 .SH PLIKI
-/usr/share/bison.simple	prosty parser
+/usr/share/bison/bison.simple	prosty parser
 .br
-/usr/share/bison.hairy	skomplikowany parser
+/usr/share/bison/bison.hairy	skomplikowany parser
 .SH ZOBACZ TAK¯E
 .IR yacc (1)
 .br
