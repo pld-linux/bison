@@ -1,11 +1,11 @@
-Summary:	GNU parser generator
+Summary:	A GNU general-purpose parser generator
 Summary(de):	GNU-Parser-Generator
 Summary(fr):	Générateur d'analyseur lexical de GNU
 Summary(pl):	GNU generator sk³adni 
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
 Version:	1.28
-Release:	1
+Release:	2
 Copyright:	GPL
 Group:		Development/Tools
 Group(pl):	Programowanie/Narzêdzia
@@ -20,9 +20,19 @@ Obsoletes:	yacc
 %define		_datadir	/usr/share/misc
 
 %description
-This is the GNU parser generator which is mostly compatible with yacc. Many
-programs use this as part of their build process. Bison is only needed on
-systems that are used for development.
+Bison is a general purpose parser generator which converts a grammar
+description for an LALR context-free grammar into a C program to parse that
+grammar. Bison can be used to develop a wide range of language parsers, from
+ones used in simple desk calculators to complex programming languages. 
+Bison is upwardly compatible with Yacc, so any correctly written Yacc
+grammar should work with Bison without any changes. If you know Yacc, you
+shouldn't have any trouble using Bison (but you do need to be very
+proficient in C programming to be able to use Bison). Many programs use
+Bison as part of their build process. Bison is only needed on systems that
+are used for development.
+                                                                                                              
+If your system will be used for C development, you should install Bison
+since it is used to build many C programs.
 
 %description -l de
 Dies ist der GNU-Parser-Generator, der größtenteils mit yacc kompatibel ist. Viele
