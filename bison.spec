@@ -12,6 +12,7 @@ Group(pl):	Programowanie/Narzêdzia
 Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Source1:	bison.1.pl
 Patch0:		bison-info.patch
+Patch1:		bison-man.patch
 Prereq:		/sbin/install-info
 Buildroot:	/tmp/%{name}-%{version}-root
 Obsoletes:	yacc
@@ -45,6 +46,7 @@ sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
