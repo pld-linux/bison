@@ -14,7 +14,8 @@ License:	GPL
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%{name}.1.pl
-BuildRequires:	autoconf
+Patch0:		%{name}-info.patch
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	yacc
 
@@ -76,13 +77,9 @@ Bison - це парсер, здеб╕льшого сум╕сний з yacc. Багато програм
 
 %prep
 %setup -q
+%patch -p1
 
 %build
-# needs at least autoconf 2.52g
-#aclocal
-#autoconf
-find | xargs touch
-rm -f doc/bison.info*
 %configure
 %{__make} \
 	pkgdatadir=%{_datadir}/misc
@@ -111,8 +108,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
+%{_datadir}/misc/*
+%{_libdir}/lib*.a
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
-%{_infodir}/*info*
-%{_datadir}/misc/*
-%{_libdir}/*
+%{_infodir}/*.info*

@@ -1,17 +1,14 @@
-diff -Nru bison-1.28/doc/bison.texinfo bison-1.28.new/doc/bison.texinfo
---- bison-1.28/doc/bison.texinfo	Thu Jan 14 16:08:17 1999
-+++ bison-1.28.new/doc/bison.texinfo	Wed Jul  7 15:11:43 1999
-@@ -37,9 +37,10 @@
+--- bison-1.875/doc/bison.texinfo.orig	Sun Dec 29 02:58:11 2002
++++ bison-1.875/doc/bison.texinfo	Sat Jan  4 18:16:31 2003
+@@ -58,9 +58,9 @@
+ @end quotation
+ @end copying
  
- @ifinfo
- @format
--START-INFO-DIR-ENTRY
--* bison: (bison).	GNU Project parser generator (yacc replacement).
--END-INFO-DIR-ENTRY
+-@dircategory GNU programming tools
 +@dircategory Programming tools:
-+@direntry
-+* bison: (bison).			The GNU parser generator
-+@end direntry
- @end format
- @end ifinfo
+ @direntry
+-* bison: (bison).       @acronym{GNU} parser generator (Yacc replacement).
++* bison: (bison).			@acronym{GNU} parser generator (Yacc replacement)
+ @end direntry
  
+ @ifset shorttitlepage-enabled
