@@ -17,8 +17,8 @@ Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-unused.patch
+BuildRequires:	m4 >= 1.4
 BuildRequires:	texinfo
-BuildRequires:	m4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		pkgdatadir	%{_datadir}/bison
