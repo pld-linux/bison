@@ -4,7 +4,9 @@ Summary(es):	Generador de parser de la GNU
 Summary(fr):	GИnИrateur d'analyseur lexical de GNU
 Summary(pl):	GNU generator skЁadni
 Summary(pt_BR):	Gerador de parser da GNU
+Summary(ru):	Bison - генератор парсеров GNU
 Summary(tr):	GNU ayrЩЧtЩrЩcЩ Эreticisi
+Summary(uk):	Bison - генератор парсер╕в GNU
 Name:		bison
 Version:	1.34
 Release:	1
@@ -60,9 +62,19 @@ yacc. VАrios programas o utilizam como parte do seu processo de
 construГЦo. Bison И somente necessАrio em sistemas que sЦo usados para
 desenvolvimento.
 
+%description -l ru
+Bison - это парсер, в основном совместимый с yacc. Многие программы
+используют его в процессе компилляции. Bison нужен только в системах,
+которые используются для разработки программ.
+
 %description -l tr
 byacc bir yacc ayrЩЧtЩrЩcЩsЩdЩr. Pek Гok program tarafЩndan, kurulum
 sЭreci sЩrasЩnda kullanЩlЩr. GeliЧtirme yapanlara gerekli olabilir.
+
+%description -l uk
+Bison - це парсер, здеб╕льшого сум╕сний з yacc. Багато програм
+використовують його в процес╕ комп╕ляц╕╖. Bison потр╕бен т╕льки в
+системах, як╕ використовуються для розробки програм.
 
 %prep
 %setup -q
