@@ -56,20 +56,16 @@ make install prefix=$RPM_BUILD_ROOT/usr
 install %{SOURCE1} $RPM_BUILD_ROOT/usr/man/pl/man1/bison.1
 gzip -n -9f $RPM_BUILD_ROOT/usr/{info/bison.info*,man/{man1/*,pl/man1/*}}
 
-%pre
-if [ $1 = 1 ]; then
-        /sbin/install-info --delete /usr/info/bison.info.gz \
-	--info-dir /etc/info-dir
-fi
-
 %post
-/sbin/install-info /usr/info/bison.info.gz --info-dir /etc/info-dir \
+/sbin/install-info /usr/info/bison.info.gz /etc/info-dir \
 --section "Programming tools:" \
 --entry \
 "* bison: (bison).                               The GNU parser generator."
 
 %preun
-/sbin/install-info --delete /usr/info/bison.info.gz --info-dir /etc/info-dir
+if [ $1 = 0 ]; then
+	/sbin/install-info --delete /usr/info/bison.info.gz /etc/info-dir
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
