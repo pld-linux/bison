@@ -84,6 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
 %{_infodir}/*info*
+%{_datadir}/bison/*
 
 %changelog
 * Tue Jun 01 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
