@@ -2,7 +2,7 @@ Summary:	A GNU general-purpose parser generator
 Summary(de):	GNU-Parser-Generator
 Summary(es):	Generador de parser de la GNU
 Summary(fr):	Générateur d'analyseur lexical de GNU
-Summary(pl):	GNU generator sk³adni 
+Summary(pl):	GNU generator sk³adni
 Summary(pt_BR):	Gerador de parser da GNU
 Summary(tr):	GNU ayrýþtýrýcý üreticisi
 Name:		bison
