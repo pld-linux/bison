@@ -18,6 +18,7 @@ Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-unused.patch
 BuildRequires:	texinfo
+BuildRequires:	m4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		pkgdatadir	%{_datadir}/bison
