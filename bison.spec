@@ -5,10 +5,11 @@ Summary(pl): GNU generator sk³adni
 Summary(tr): GNU ayrýþtýrýcý üreticisi
 Name:        bison
 Version:     1.25
-Release:     6
+Release:     7
 Copyright:   GPL
 Group:       Development/Tools
-Source:      ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Source0:     ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Source1:     bison.1.pl
 Prereq:      /sbin/install-info
 Buildroot:   /tmp/%{name}-%{version}-root
 Obsoletes:   yacc
@@ -48,17 +49,27 @@ make "CFLAGS=$RPM_OPT_FLAGS" LDFLAGS="-s"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/usr/man/pl/man1
 
 make install prefix=$RPM_BUILD_ROOT/usr
-gzip -n -9f $RPM_BUILD_ROOT/usr/info/bison.info*
+
+install %{SOURCE1} $RPM_BUILD_ROOT/usr/man/pl/man1/bison.1
+gzip -n -9f $RPM_BUILD_ROOT/usr/{info/bison.info*,man/{man1/*,pl/man1/*}}
+
+%pre
+if [ $1 = 1 ]; then
+        /sbin/install-info --delete /usr/info/bison.info.gz \
+	--info-dir /etc/info-dir
+fi
 
 %post
-/sbin/install-info /usr/info/bison.info.gz /usr/info/dir --entry="* bison: (bison).                        The GNU parser generator."
+/sbin/install-info /usr/info/bison.info.gz --info-dir /etc/info-dir \
+--section "Programming tools:" \
+--entry \
+"* bison: (bison).                               The GNU parser generator."
 
 %preun
-if [ $1 = 0 ]; then
-  /sbin/install-info --delete /usr/info/bison.info.gz /usr/info/dir --entry="* bison: (bison).                        The GNU parser generator."
-fi
+/sbin/install-info --delete /usr/info/bison.info.gz --info-dir /etc/info-dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -67,10 +78,17 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644, root, root, 755)
 %attr(755, root, root) /usr/bin/*
 %attr(644, root,  man) /usr/man/man1/*
+%lang(pl) %attr(644, root,  man) /usr/man/pl/man1/*
 /usr/share/*
 /usr/info/*info*
 
 %changelog
+* Sat Dec 12 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.25-7]
+- added gzipping man pages,
+- added pl man pages,
+- standarized {un}registering info pages.
+
 * Fri Nov  6 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.25-6]
 - fixed passing $RPM_OPT_FLAGS,
