@@ -82,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
 
-/usr/share/*
+%{_datadir}/*
 %{_infodir}/*info*
 
 %changelog
@@ -110,7 +110,7 @@ rm -rf $RPM_BUILD_ROOT
   [1.25-6]
 - fixed passing $RPM_OPT_FLAGS,
 - modified pl translation,
-- bisona.{simple,hairy} moved to /usr/share.
+- bisona.{simple,hairy} moved to %{_datadir}.
 
 * Sun Jun 14 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
   [1.25-5]
