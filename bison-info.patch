@@ -1,6 +1,6 @@
-diff -Nru bison-1.27/bison.texinfo bison-1.27.new/bison.texinfo
---- bison-1.27/bison.texinfo	Sat Feb 27 02:14:48 1999
-+++ bison-1.27.new/bison.texinfo	Sat Feb 27 02:16:37 1999
+diff -Nru bison-1.28/doc/bison.texinfo bison-1.28.new/doc/bison.texinfo
+--- bison-1.28/doc/bison.texinfo	Thu Jan 14 16:08:17 1999
++++ bison-1.28.new/doc/bison.texinfo	Wed Jul  7 15:11:43 1999
 @@ -37,9 +37,10 @@
  
  @ifinfo
@@ -10,28 +10,27 @@ diff -Nru bison-1.27/bison.texinfo bison-1.27.new/bison.texinfo
 -END-INFO-DIR-ENTRY
 +@dircategory Programming tools:
 +@direntry
-+* bison: (bison)			The GNU parser generator.
++* bison: (bison)			The GNU parser generator
 +@end direntry
  @end format
  @end ifinfo
  
-@@ -126,6 +127,19 @@
+@@ -126,6 +127,18 @@
  @page
  
  @node Top, Introduction, (dir), (dir)
 +@top bison
 +
-+   "Bison" is a general-purpose parser generator that converts a
-+grammar description for an LALR(1) context-free grammar into a C
-+program to parse that grammar.  Once you are proficient with Bison, you
-+may use it to develop a wide range of language parsers, from those used
-+in simple desk calculators to complex programming languages.
++   "Bison" is a general-purpose parser generator that converts a grammar
++description for an LALR(1) context-free grammar into a C program to parse
++that grammar.  Once you are proficient with Bison, you may use it to develop
++a wide range of language parsers, from those used in simple desk calculators
++to complex programming languages.
 +
-+   Bison is upward compatible with Yacc: all properly-written Yacc
-+grammars ought to work with Bison with no change.  Anyone familiar with
-+Yacc should be able to use Bison with little trouble.  You need to be
-+fluent in C programming in order to use Bison or to understand this
-+manual.
++   Bison is upward compatible with Yacc: all properly-written Yacc grammars
++ought to work with Bison with no change.  Anyone familiar with Yacc should
++be able to use Bison with little trouble.  You need to be fluent in C
++programming in order to use Bison or to understand this manual.
  
  @ifinfo
  This manual documents version @value{VERSION} of Bison.
