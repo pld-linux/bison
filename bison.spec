@@ -5,11 +5,12 @@ Summary(pl): GNU generator sk³adni
 Summary(tr): GNU ayrýþtýrýcý üreticisi
 Name:        bison
 Version:     1.25
-Release:     7
+Release:     8
 Copyright:   GPL
 Group:       Development/Tools
 Source0:     ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Source1:     bison.1.pl
+Patch0:      bison-info.patch
 Prereq:      /sbin/install-info
 Buildroot:   /tmp/%{name}-%{version}-root
 Obsoletes:   yacc
@@ -42,9 +43,11 @@ sýrasýnda kullanýlýr. Geliþtirme yapanlara gerekli olabilir.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-./configure --prefix=/usr
+./configure \
+	--prefix=/usr
 make "CFLAGS=$RPM_OPT_FLAGS" LDFLAGS="-s"
 
 %install
@@ -54,13 +57,10 @@ install -d $RPM_BUILD_ROOT/usr/man/pl/man1
 make install prefix=$RPM_BUILD_ROOT/usr
 
 install %{SOURCE1} $RPM_BUILD_ROOT/usr/man/pl/man1/bison.1
-gzip -n -9f $RPM_BUILD_ROOT/usr/{info/bison.info*,man/{man1/*,pl/man1/*}}
+gzip -9nf $RPM_BUILD_ROOT/usr/{info/bison.info*,man/{man1/*,pl/man1/*}}
 
 %post
-/sbin/install-info /usr/info/bison.info.gz /etc/info-dir \
---section "Programming tools:" \
---entry \
-"* bison: (bison).                               The GNU parser generator."
+/sbin/install-info /usr/info/bison.info.gz /etc/info-dir
 
 %preun
 if [ $1 = 0 ]; then
@@ -79,6 +79,10 @@ rm -rf $RPM_BUILD_ROOT
 /usr/info/*info*
 
 %changelog
+* Tue Dec 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.25-8]
+- standarized {un}registering info pages (added bison-info.patch).
+
 * Sat Dec 12 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.25-7]
 - added gzipping man pages,
