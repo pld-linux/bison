@@ -56,19 +56,19 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/man/pl/man1
+install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 make install prefix=$RPM_BUILD_ROOT/usr
 
-install %{SOURCE1} $RPM_BUILD_ROOT/usr/man/pl/man1/bison.1
+install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
 gzip -9nf $RPM_BUILD_ROOT/usr/{info/bison.info*,man/{man1/*,pl/man1/*}}
 
 %post
-/sbin/install-info /usr/info/bison.info.gz /etc/info-dir
+/sbin/install-info %{_infodir}/bison.info.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --delete /usr/info/bison.info.gz /etc/info-dir
+	/sbin/install-info --delete %{_infodir}/bison.info.gz /etc/info-dir
 fi
 
 %clean
@@ -79,11 +79,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) /usr/bin/*
 
-/usr/man/man1/*
-%lang(pl) /usr/man/pl/man1/*
+%{_mandir}/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
 
 /usr/share/*
-/usr/info/*info*
+%{_infodir}/*info*
 
 %changelog
 * Thu Apr 22 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
