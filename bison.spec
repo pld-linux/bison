@@ -8,16 +8,14 @@ Summary(ru):	Bison - генератор парсеров GNU
 Summary(tr):	GNU ayrЩЧtЩrЩcЩ Эreticisi
 Summary(uk):	Bison - генератор парсер╕в GNU
 Name:		bison
-Version:	1.875
-Release:	8
+Version:	2.0
+Release:	1
 License:	GPL
 Group:		Development/Tools
-Source0:	ftp://ftp.gnu.org/pub/gnu/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	b7f8027b249ebd4dd0cc948943a71af0
+Source0:	ftp://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.gz
+# Source0-md5:	c17f964fd5504b88b07a183420de25e3
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-unused.patch
-Patch2:		%{name}-code_start-segv.patch
 BuildRequires:	automake
 BuildRequires:	m4 >= 1.4
 BuildRequires:	texinfo
@@ -85,12 +83,9 @@ Bison - це парсер, здеб╕льшого сум╕сний з yacc. Багато програм
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
-rm -f config/config.sub
-cp /usr/share/automake/config.sub config/
+cp -f /usr/share/automake/config.sub config
 %configure
 %{__make} \
 	pkgdatadir=%{pkgdatadir}
@@ -119,6 +114,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/bison
+# would conflict with byacc (but is not 100% compatible)
+#%attr(755,root,root) %{_bindir}/yacc
 %{pkgdatadir}
 %{_libdir}/lib*.a
 %{_mandir}/man1/*
