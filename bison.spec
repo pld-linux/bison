@@ -8,18 +8,22 @@ Summary(ru):	Bison - генератор парсеров GNU
 Summary(tr):	GNU ayrЩЧtЩrЩcЩ Эreticisi
 Summary(uk):	Bison - генератор парсер╕в GNU
 Name:		bison
-Version:	2.0
+Version:	2.1
 Release:	1
 License:	GPL
 Group:		Development/Tools
-Source0:	ftp://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.gz
-# Source0-md5:	c17f964fd5504b88b07a183420de25e3
+Source0:	ftp://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.bz2
+# Source0-md5:	ef3110077462b1140b2ae612626e8486
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-pl.po-update.patch
 BuildRequires:	automake
-BuildRequires:	m4 >= 1.4
-BuildRequires:	texinfo
-Requires:	m4 >= 1.4
+BuildRequires:	flex
+BuildRequires:	gettext-devel >= 0.12
+BuildRequires:	m4 >= 1.4.3
+BuildRequires:	texinfo >= 4.0
+Requires:	%{name}-runtime = %{version}-%{release}
+Requires:	m4 >= 1.4.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		pkgdatadir	%{_datadir}/bison
@@ -80,9 +84,23 @@ Bison - це парсер, здеб╕льшого сум╕сний з yacc. Багато програм
 використовують його в процес╕ комп╕ляц╕╖. Bison потр╕бен т╕льки в
 системах, як╕ використовуються для розробки програм.
 
+%package runtime
+Summary:	Runtime library for programs containing bison-generated parsers
+Summary(pl):	Biblioteka uruchomieniowa dla programСw zawierajacych parsery bisonowe
+Group:		Libraries
+
+%description runtime
+Runtime library for internationalized programs containing
+bison-generated parsers.
+
+%description runtime -l pl
+Biblioteka uruchomieniowa dla umiЙdzynarodowionych programСw
+zawierajacych parsery wygenerowane przez bisona.
+
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.sub config
@@ -101,6 +119,7 @@ install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
 
 %find_lang %{name}
+%find_lang %{name}-runtime
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -113,11 +132,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/bison
 # would conflict with byacc (but is not 100% compatible)
 #%attr(755,root,root) %{_bindir}/yacc
 %{pkgdatadir}
 %{_libdir}/lib*.a
+%{_aclocaldir}/bison-i18n.m4
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
 %{_infodir}/*.info*
+
+%files runtime -f %{name}-runtime.lang
+%defattr(644,root,root,755)
