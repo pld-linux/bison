@@ -8,12 +8,12 @@ Summary(ru):	Bison - генератор парсеров GNU
 Summary(tr):	GNU ayrЩЧtЩrЩcЩ Эreticisi
 Summary(uk):	Bison - генератор парсер╕в GNU
 Name:		bison
-Version:	2.2
+Version:	2.3
 Release:	1
 License:	GPL
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.bz2
-# Source0-md5:	e345a5d021db850f06ce49eba78af027
+# Source0-md5:	c18640c6ec31a169d351e3117ecce3ec
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
