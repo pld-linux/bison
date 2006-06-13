@@ -1,5 +1,5 @@
---- bison-2.2/po/pl.po.orig	2006-05-19 23:49:32.000000000 +0200
-+++ bison-2.2/po/pl.po	2006-05-24 22:43:58.172759750 +0200
+--- bison-2.3/po/pl.po.orig	2006-06-05 09:32:21.000000000 +0200
++++ bison-2.3/po/pl.po	2006-06-13 22:47:25.234950750 +0200
 @@ -1,21 +1,20 @@
  # Polish translations for GNU Bison package.
 -# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
@@ -11,9 +11,9 @@
  msgid ""
  msgstr ""
 -"Project-Id-Version: bison 2.0a\n"
-+"Project-Id-Version: bison 2.2\n"
++"Project-Id-Version: bison 2.3\n"
  "Report-Msgid-Bugs-To: bug-bison@gnu.org\n"
- "POT-Creation-Date: 2006-05-19 14:49-0700\n"
+ "POT-Creation-Date: 2006-06-05 00:32-0700\n"
 -"PO-Revision-Date: 2005-05-24 20:43+0200\n"
 +"PO-Revision-Date: 2006-05-21 19:53+0200\n"
  "Last-Translator: Wojciech Polak <polak@gnu.org>\n"
@@ -222,13 +222,86 @@
  
  #: src/symtab.c:282
  #, c-format
-@@ -839,8 +822,7 @@
- #~ msgstr "b³±d sk³adni, niespodziewany %s, oczekiwano %s lub %s lub %s"
- 
- #~ msgid "syntax error, unexpected %s, expecting %s or %s or %s or %s"
+@@ -792,82 +775,3 @@
+ #, c-format
+ msgid "time in %s: %ld.%06ld (%ld%%)\n"
+ msgstr "czas w %s: %ld.%06ld (%ld%%)\n"
+-
+-#~ msgid "syntax error: cannot back up"
+-#~ msgstr "b³±d sk³adni: nie mo¿na cofn±æ przesuniêcia symbolu leksykalnego"
+-
+-#~ msgid "Stack now"
+-#~ msgstr "Stos obecnie"
+-
+-#~ msgid "Reducing stack by rule %d (line %u), "
+-#~ msgstr "Redukcja stosu poprzez regu³ê %d (linia %u), "
+-
+-#~ msgid "parser stack overflow"
+-#~ msgstr "przepe³nienie stosu analizatora"
+-
+-#~ msgid "Stack size increased to %lu\n"
+-#~ msgstr "Rozmiar stosu zwiêkszony do %lu\n"
+-
+-#~ msgid "Entering state %d\n"
+-#~ msgstr "Wej¶cie w stan %d\n"
+-
+-#~ msgid "Reading a token: "
+-#~ msgstr "Odczyt symbolu leksykalnego: "
+-
+-#~ msgid "Now at end of input.\n"
+-#~ msgstr "Teraz na koñcu wej¶cia.\n"
+-
+-#~ msgid "Next token is"
+-#~ msgstr "Nastêpny symbol leksykalny to"
+-
+-#~ msgid "Shifting"
+-#~ msgstr "Przesuniêcie"
+-
+-#~ msgid "POSIX forbids declarations in the grammar"
+-#~ msgstr "POSIX zabrania deklaracji w gramatyce"
+-
+-#~ msgid "syntax error, unexpected %s"
+-#~ msgstr "b³±d sk³adni, niespodziewany symbol %s"
+-
+-#~ msgid "syntax error, unexpected %s, expecting %s"
+-#~ msgstr "b³±d sk³adni, niespodziewany symbol %s, oczekiwano %s"
+-
+-#~ msgid "syntax error, unexpected %s, expecting %s or %s"
+-#~ msgstr "b³±d sk³adni, niespodziewany symbol %s, oczekiwano %s lub %s"
+-
+-#~ msgid "syntax error, unexpected %s, expecting %s or %s or %s"
+-#~ msgstr "b³±d sk³adni, niespodziewany %s, oczekiwano %s lub %s lub %s"
+-
+-#~ msgid "syntax error, unexpected %s, expecting %s or %s or %s or %s"
 -#~ msgstr ""
 -#~ "b³±d sk³adni, niespodziewany symbol %s, oczekiwano %s lub %s lub %s lub %s"
-+#~ msgstr "b³±d sk³adni, niespodziewany symbol %s, oczekiwano %s lub %s lub %s lub %s"
- 
- #~ msgid "syntax error; also memory exhausted"
- #~ msgstr "b³±d sk³adni; ponadto wyczerpana pamiêæ"
+-
+-#~ msgid "syntax error; also memory exhausted"
+-#~ msgstr "b³±d sk³adni; ponadto wyczerpana pamiêæ"
+-
+-#~ msgid "syntax error"
+-#~ msgstr "b³±d sk³adni"
+-
+-#~ msgid "Error: discarding"
+-#~ msgstr "B³±d: odrzucenie"
+-
+-#~ msgid "Error: popping"
+-#~ msgstr "B³±d: zdejmowanie"
+-
+-#~ msgid "Error: discarding lookahead"
+-#~ msgstr "B³±d: odrzucenie symbolu-nastêpcy"
+-
+-#~ msgid "invalid $ value"
+-#~ msgstr "nieprawid³owa warto¶æ $"
+-
+-#~ msgid "type redeclaration for %s"
+-#~ msgstr "redeklaracja typu dla %s"
+-
+-#~ msgid "redefining precedence of %s"
+-#~ msgstr "redefiniowanie pierwszeñstwa %s"
+-
+-#~ msgid "conflicting precedences for %s and %s"
+-#~ msgstr "konflikt pierwszeñstw dla %s i %s"
+-
+-#~ msgid "conflicting associativities for %s (%s) and %s (%s)"
+-#~ msgstr "konflikt ³±czno¶ci operatorów dla %s (%s) i %s (%s)"
