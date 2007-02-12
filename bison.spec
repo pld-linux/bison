@@ -1,12 +1,12 @@
 Summary:	A GNU general-purpose parser generator
-Summary(de):	GNU-Parser-Generator
-Summary(es):	Generador de parser de la GNU
-Summary(fr):	GИnИrateur d'analyseur lexical de GNU
-Summary(pl):	GNU generator skЁadni
-Summary(pt_BR):	Gerador de parser da GNU
-Summary(ru):	Bison - генератор парсеров GNU
-Summary(tr):	GNU ayrЩЧtЩrЩcЩ Эreticisi
-Summary(uk):	Bison - генератор парсер╕в GNU
+Summary(de.UTF-8):   GNU-Parser-Generator
+Summary(es.UTF-8):   Generador de parser de la GNU
+Summary(fr.UTF-8):   Gц╘nц╘rateur d'analyseur lexical de GNU
+Summary(pl.UTF-8):   GNU generator skе┌adni
+Summary(pt_BR.UTF-8):   Gerador de parser da GNU
+Summary(ru.UTF-8):   Bison - пЁп╣п╫п╣я─п╟я┌п╬я─ п©п╟я─я│п╣я─п╬п╡ GNU
+Summary(tr.UTF-8):   GNU ayrд╠е÷tд╠rд╠cд╠ ц╪reticisi
+Summary(uk.UTF-8):   Bison - пЁп╣п╫п╣я─п╟я┌п╬я─ п©п╟я─я│п╣я─я√п╡ GNU
 Name:		bison
 Version:	1.35
 Release:	1
@@ -32,49 +32,49 @@ changes. If you know Yacc, you shouldn't have any trouble using Bison
 use Bison). Many programs use Bison as part of their build process.
 Bison is only needed on systems that are used for development.
 
-%description -l de
-Dies ist der GNU-Parser-Generator, der grЖъtenteils mit yacc
+%description -l de.UTF-8
+Dies ist der GNU-Parser-Generator, der grц╤ц÷tenteils mit yacc
 kompatibel ist. Viele Programme benutzen ihn als Teil des
-Aufbauvorgangs. Bison wird nur auf Systemen benЖtigt, die zur
+Aufbauvorgangs. Bison wird nur auf Systemen benц╤tigt, die zur
 Entwicklung verwendet werden.
 
-%description -l es
-Este es el creador de anАlisis gramatical GNU mАs compatible con yacc.
+%description -l es.UTF-8
+Este es el creador de anц║lisis gramatical GNU mц║s compatible con yacc.
 Varios programas lo utilizan como parte del su proceso de
-construcciСn. Bison solamente hace falta en sistemas que se usan para
+construcciцЁn. Bison solamente hace falta en sistemas que se usan para
 desarrollo.
 
-%description -l fr
-GИnИrateur d'analyseur lexical de GNU compatible avec yacc. De
+%description -l fr.UTF-8
+Gц╘nц╘rateur d'analyseur lexical de GNU compatible avec yacc. De
 nombreux programmes l'utilisent dans leur phase de construction. Bison
-ne sert que sur les systХmes utilisИs pour le dИveloppement.
+ne sert que sur les systц╗mes utilisц╘s pour le dц╘veloppement.
 
-%description -l pl
-W pakiecie znajduje siЙ implementacja GNU generatora analizatora
-skЁadni, ktСry jest odpowiednikiem programu yacc. Wiele programСw
-podczas kompilacji potrzebuje tego programu aby proces budowy plikСw
-binarnych przebiegaЁ prawidЁowo. Bison jest potrzebny tylko w
-systemach, w ktСrych prowadzone s╠ rС©nego rodzaju kompilacje.
+%description -l pl.UTF-8
+W pakiecie znajduje siд≥ implementacja GNU generatora analizatora
+skе┌adni, ktцЁry jest odpowiednikiem programu yacc. Wiele programцЁw
+podczas kompilacji potrzebuje tego programu aby proces budowy plikцЁw
+binarnych przebiegaе┌ prawidе┌owo. Bison jest potrzebny tylko w
+systemach, w ktцЁrych prowadzone sд┘ rцЁе╪nego rodzaju kompilacje.
 
-%description -l pt_BR
-Este И o gerador de anАlise gramatical GNU que И mais compatМvel com
-yacc. VАrios programas o utilizam como parte do seu processo de
-construГЦo. Bison И somente necessАrio em sistemas que sЦo usados para
+%description -l pt_BR.UTF-8
+Este ц╘ o gerador de anц║lise gramatical GNU que ц╘ mais compatц╜vel com
+yacc. Vц║rios programas o utilizam como parte do seu processo de
+construц╖цёo. Bison ц╘ somente necessц║rio em sistemas que sцёo usados para
 desenvolvimento.
 
-%description -l ru
-Bison - это парсер, в основном совместимый с yacc. Многие программы
-используют его в процессе компилляции. Bison нужен только в системах,
-которые используются для разработки программ.
+%description -l ru.UTF-8
+Bison - я█я┌п╬ п©п╟я─я│п╣я─, п╡ п╬я│п╫п╬п╡п╫п╬п╪ я│п╬п╡п╪п╣я│я┌п╦п╪я▀п╧ я│ yacc. п°п╫п╬пЁп╦п╣ п©я─п╬пЁя─п╟п╪п╪я▀
+п╦я│п©п╬п╩я▄п╥я┐я▌я┌ п╣пЁп╬ п╡ п©я─п╬я├п╣я│я│п╣ п╨п╬п╪п©п╦п╩п╩я▐я├п╦п╦. Bison п╫я┐п╤п╣п╫ я┌п╬п╩я▄п╨п╬ п╡ я│п╦я│я┌п╣п╪п╟я┘,
+п╨п╬я┌п╬я─я▀п╣ п╦я│п©п╬п╩я▄п╥я┐я▌я┌я│я▐ п╢п╩я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╦ п©я─п╬пЁя─п╟п╪п╪.
 
-%description -l tr
-byacc bir yacc ayrЩЧtЩrЩcЩsЩdЩr. Pek Гok program tarafЩndan, kurulum
-sЭreci sЩrasЩnda kullanЩlЩr. GeliЧtirme yapanlara gerekli olabilir.
+%description -l tr.UTF-8
+byacc bir yacc ayrд╠е÷tд╠rд╠cд╠sд╠dд╠r. Pek ц╖ok program tarafд╠ndan, kurulum
+sц╪reci sд╠rasд╠nda kullanд╠lд╠r. Geliе÷tirme yapanlara gerekli olabilir.
 
-%description -l uk
-Bison - це парсер, здеб╕льшого сум╕сний з yacc. Багато програм
-використовують його в процес╕ комп╕ляц╕╖. Bison потр╕бен т╕льки в
-системах, як╕ використовуються для розробки програм.
+%description -l uk.UTF-8
+Bison - я├п╣ п©п╟я─я│п╣я─, п╥п╢п╣п╠я√п╩я▄я┬п╬пЁп╬ я│я┐п╪я√я│п╫п╦п╧ п╥ yacc. п▒п╟пЁп╟я┌п╬ п©я─п╬пЁя─п╟п╪
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄ п╧п╬пЁп╬ п╡ п©я─п╬я├п╣я│я√ п╨п╬п╪п©я√п╩я▐я├я√я≈. Bison п©п╬я┌я─я√п╠п╣п╫ я┌я√п╩я▄п╨п╦ п╡
+я│п╦я│я┌п╣п╪п╟я┘, я▐п╨я√ п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я▌я┌я▄я│я▐ п╢п╩я▐ я─п╬п╥я─п╬п╠п╨п╦ п©я─п╬пЁя─п╟п╪.
 
 %prep
 %setup -q
