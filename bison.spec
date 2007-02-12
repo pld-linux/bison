@@ -1,12 +1,12 @@
 Summary:	A GNU general-purpose parser generator
-Summary(de.UTF-8):   GNU-Parser-Generator
-Summary(es.UTF-8):   Generador de parser de la GNU
-Summary(fr.UTF-8):   Générateur d'analyseur lexical de GNU
-Summary(pl.UTF-8):   GNU generator składni
-Summary(pt_BR.UTF-8):   Gerador de parser da GNU
-Summary(ru.UTF-8):   Bison - генератор парсеров GNU
-Summary(tr.UTF-8):   GNU ayrıştırıcı üreticisi
-Summary(uk.UTF-8):   Bison - генератор парсерів GNU
+Summary(de.UTF-8):	GNU-Parser-Generator
+Summary(es.UTF-8):	Generador de parser de la GNU
+Summary(fr.UTF-8):	Générateur d'analyseur lexical de GNU
+Summary(pl.UTF-8):	GNU generator składni
+Summary(pt_BR.UTF-8):	Gerador de parser da GNU
+Summary(ru.UTF-8):	Bison - генератор парсеров GNU
+Summary(tr.UTF-8):	GNU ayrıştırıcı üreticisi
+Summary(uk.UTF-8):	Bison - генератор парсерів GNU
 Name:		bison
 Version:	2.3
 Release:	1
@@ -86,7 +86,7 @@ Bison - це парсер, здебільшого сумісний з yacc. Ба
 
 %package runtime
 Summary:	Runtime library for programs containing bison-generated parsers
-Summary(pl.UTF-8):   Biblioteka uruchomieniowa dla programów zawierajacych parsery bisonowe
+Summary(pl.UTF-8):	Biblioteka uruchomieniowa dla programów zawierajacych parsery bisonowe
 Group:		Libraries
 
 %description runtime
