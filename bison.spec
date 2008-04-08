@@ -12,7 +12,7 @@ Version:	2.3
 Release:	1
 License:	GPL
 Group:		Development/Tools
-Source0:	ftp://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.bz2
 # Source0-md5:	c18640c6ec31a169d351e3117ecce3ec
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
