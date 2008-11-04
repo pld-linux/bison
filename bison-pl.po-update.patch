@@ -1,231 +1,144 @@
---- bison-2.3/po/pl.po.orig	2006-06-05 09:32:21.000000000 +0200
-+++ bison-2.3/po/pl.po	2006-06-13 22:47:25.234950750 +0200
-@@ -1,21 +1,20 @@
- # Polish translations for GNU Bison package.
--# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
-+# Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
- # This file is distributed under the same license as the GNU Bison package.
--# Wojciech Polak <polak@gnu.org>, 2004, 2005.
-+# Wojciech Polak <polak@gnu.org>, 2004, 2005, 2006.
- #
- msgid ""
- msgstr ""
--"Project-Id-Version: bison 2.0a\n"
-+"Project-Id-Version: bison 2.3\n"
- "Report-Msgid-Bugs-To: bug-bison@gnu.org\n"
- "POT-Creation-Date: 2006-06-05 00:32-0700\n"
--"PO-Revision-Date: 2005-05-24 20:43+0200\n"
-+"PO-Revision-Date: 2006-05-21 19:53+0200\n"
- "Last-Translator: Wojciech Polak <polak@gnu.org>\n"
- "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
- "MIME-Version: 1.0\n"
- "Content-Type: text/plain; charset=ISO-8859-2\n"
- "Content-Transfer-Encoding: 8bit\n"
--"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
--"|| n%100>=20) ? 1 : 2);\n"
-+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
- 
- #: src/complain.c:53 src/complain.c:68
- msgid "warning: "
-@@ -28,23 +27,17 @@
- #: src/conflicts.c:77
+--- bison-2.4/po/pl.po.orig	2008-11-02 23:00:23.000000000 +0100
++++ bison-2.4/po/pl.po	2008-11-04 22:29:46.681560465 +0100
+@@ -106,7 +106,7 @@
+ #: src/files.c:357
  #, c-format
- msgid "    Conflict between rule %d and token %s resolved as shift"
+ msgid "refusing to overwrite the input file %s"
 -msgstr ""
--"    Konflikt pomiêdzy regu³± %d i symbolem leksykalnym %s rozwi±zany jako "
--"przesuniêcie"
-+msgstr "    Konflikt pomiêdzy regu³± %d i symbolem leksykalnym %s rozwi±zany jako przesuniêcie"
++msgstr "odmowa nadpisania pliku wej¶ciowego %s"
  
- #: src/conflicts.c:85
+ #: src/files.c:362
  #, c-format
- msgid "    Conflict between rule %d and token %s resolved as reduce"
--msgstr ""
--"    Konflikt pomiêdzy regu³± %d i symbolem leksykalnym %s rozwi±zany jako "
--"redukcja"
-+msgstr "    Konflikt pomiêdzy regu³± %d i symbolem leksykalnym %s rozwi±zany jako redukcja"
+@@ -167,7 +167,6 @@
+ "\n"
  
- #: src/conflicts.c:92
- #, c-format
- msgid "    Conflict between rule %d and token %s resolved as an error"
--msgstr ""
--"    Konflikt pomiêdzy regu³± %d i symbolem leksykalnym %s rozwi±zany jako "
--"b³±d"
-+msgstr "    Konflikt pomiêdzy regu³± %d i symbolem leksykalnym %s rozwi±zany jako b³±d"
- 
- #: src/conflicts.c:400
- #, c-format
-@@ -124,25 +117,22 @@
- "If a long option shows an argument as mandatory, then it is mandatory\n"
- "for the equivalent short option also.  Similarly for optional arguments.\n"
- msgstr ""
--"Je¶li d³uga opcja posiada obowi±zkowy argument, to wtedy obowi±zkowy jest on "
--"tak¿e\n"
--"dla równowa¿nej jej opcji krótkiej.  Podobnie jest dla argumentów "
--"opcjonalnych.\n"
-+"Je¶li d³uga opcja posiada obowi±zkowy argument, to wtedy obowi±zkowy jest on tak¿e\n"
-+"dla równowa¿nej jej opcji krótkiej.  Podobnie jest dla argumentów opcjonalnych.\n"
- 
- #: src/getargs.c:214
+ #: src/getargs.c:272
 -#, fuzzy
  msgid ""
- "Operation modes:\n"
- "  -h, --help                 display this help and exit\n"
- "  -V, --version              output version information and exit\n"
--"      --print-localedir      output directory containing locale-dependent "
--"data\n"
-+"      --print-localedir      output directory containing locale-dependent data\n"
- "  -y, --yacc                 emulate POSIX yacc\n"
+ "Parser:\n"
+ "  -L, --language=LANGUAGE    specify the output programming language\n"
+@@ -181,7 +180,8 @@
+ "\n"
  msgstr ""
- "Tryby dzia³ania:\n"
--"  -h, --help      wy¶wietla pomoc i koñczy pracê\n"
--"  -V, --version   wy¶wietla informacje o wersji i koñczy pracê\n"
--"  -y, --yacc      emuluje POSIX yacc\n"
-+"  -h, --help                 wy¶wietla pomoc i koñczy pracê\n"
-+"  -V, --version              wy¶wietla informacje o wersji i koñczy pracê\n"
-+"      --print-localedir      wy¶wietla katalog z danymi dotycz±cymi lokalizacji\n"
-+"  -y, --yacc                 emuluje POSIX yacc\n"
- 
- #: src/getargs.c:222
- msgid ""
-@@ -159,8 +149,7 @@
+ "Analizator sk³adni:\n"
+-"  -L, --language=JÊZYK       u¿ywa wyj¶ciowy jêzyk programowania\n"
++"  -L, --language=JÊZYK       u¿ywa wyj¶ciowego jêzyka programowania\n"
++"                             (opcja eksperymentalna)\n"
  "  -S, --skeleton=PLIK        u¿ywa podanego szkieletu\n"
  "  -t, --debug                produkuje analizator zdolny do odpluskwiania\n"
  "      --locations            w³±cza obliczanie lokacji\n"
--"  -p, --name-prefix=PREFIKS  dopisuje pocz±tkowy PREFIKS do zewnêtrznych "
--"symboli\n"
-+"  -p, --name-prefix=PREFIKS  dopisuje pocz±tkowy PREFIKS do zewnêtrznych symboli\n"
- "  -l, --no-lines             zabrania tworzenia dyrektyw `#line'\n"
- "  -n, --no-parser            tworzy jedynie tablice\n"
- "  -k, --token-table          do³±cza tablicê nazw symboli leksykalnych\n"
-@@ -173,8 +162,7 @@
- "  -v, --verbose              same as `--report=state'\n"
- "  -b, --file-prefix=PREFIX   specify a PREFIX for output files\n"
- "  -o, --output=FILE          leave output to FILE\n"
--"  -g, --graph                also produce a VCG description of the "
--"automaton\n"
-+"  -g, --graph                also produce a VCG description of the automaton\n"
+@@ -232,6 +232,14 @@
+ "  `error'           treat warnings as errors\n"
+ "\n"
  msgstr ""
- "Wyj¶cie:\n"
- "  -d, --defines              produkuje tak¿e plik nag³ówkowy\n"
-@@ -194,8 +182,7 @@
- "  `all'          include all the above information\n"
- "  `none'         disable the report\n"
- msgstr ""
--"LISTA jest list± s³ów przedzielonych przecinkami. Dopuszczalne s± "
--"nastêpuj±ce s³owa:\n"
-+"LISTA jest list± s³ów przedzielonych przecinkami. Dopuszczalne s± nastêpuj±ce s³owa:\n"
- "  `state'        opisuje stany\n"
- "  `itemset'      dodaje symbole pochodne do listy symboli podstawowych\n"
- "  `look-ahead'   drukuje listê mo¿liwych w ka¿dej pozycji symboli-nastêpców\n"
-@@ -226,8 +213,7 @@
- "This is free software; see the source for copying conditions.  There is NO\n"
- "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
- msgstr ""
--"Niniejszy program jest wolnym oprogramowaniem; warunki kopiowania s± "
--"opisane\n"
-+"Niniejszy program jest wolnym oprogramowaniem; warunki kopiowania s± opisane\n"
- "w ¼ród³ach. Autorzy nie daj± ¯ADNYCH gwarancji, w tym równie¿ gwarancji\n"
- "PRZYDATNO¦CI DO SPRZEDA¯Y LUB DO KONKRETNYCH CELÓW.\n"
++"Kategorie ostrze¿eñ obejmuj±:\n"
++"  `midrule-values'  nieustawione lub nieu¿ywane warto¶ci regu³ po¶rednich\n"
++"  `yacc'            niekompatybilno¶ci z POSIX YACC\n"
++"  `all'             wszystkie ostrze¿enia\n"
++"  `no-KATEGORIA'    wy³±cza ostrze¿enia z KATEGORII\n"
++"  `none'            wy³±cza wszystkie ostrze¿enia\n"
++"  `error'           traktuje ostrze¿enia jako b³êdy\n"
++"\n"
  
-@@ -343,17 +329,16 @@
+ #: src/getargs.c:313
+ msgid ""
+@@ -484,20 +492,20 @@
+ msgstr "Bezu¿yteczne regu³y w gramatyce"
  
- #: src/reader.c:259
- msgid "empty rule for typed nonterminal, and no action"
--msgstr ""
--"pusta regu³a i brak akcji dla symbolu nieterminalnego z okre¶leniem typu"
-+msgstr "pusta regu³a i brak akcji dla symbolu nieterminalnego z okre¶leniem typu"
- 
- #: src/reader.c:273
+ #: src/reduce.c:388
 -#, fuzzy, c-format
 +#, c-format
- msgid "unused value: $%d"
--msgstr "nieprawid³owa warto¶æ: %s"
-+msgstr "nieu¿ywana warto¶æ: $%d"
+ msgid "%d nonterminal useless in grammar"
+ msgid_plural "%d nonterminals useless in grammar"
+-msgstr[0] "Symbole nieterminalne bezu¿yteczne w gramatyce"
+-msgstr[1] "Symbole nieterminalne bezu¿yteczne w gramatyce"
+-msgstr[2] "Symbole nieterminalne bezu¿yteczne w gramatyce"
++msgstr[0] "%d symbol nieterminalny bezu¿yteczny w gramatyce"
++msgstr[1] "%d symbole nieterminalne bezu¿yteczne w gramatyce"
++msgstr[2] "%d symboli nieterminalnych bezu¿ytecznych w gramatyce"
  
- #: src/reader.c:275
- msgid "unset value: $$"
--msgstr ""
-+msgstr "nieustawiona warto¶æ: $$"
- 
- #: src/reader.c:353 src/reader.c:367 src/reader.c:380
- #, c-format
-@@ -463,25 +448,25 @@
- msgstr "nierozpoznana sekwencja ucieczki: %s"
- 
- #: src/scan-gram.l:575
+ #: src/reduce.c:397
 -#, fuzzy, c-format
 +#, c-format
- msgid "missing `{' in %s"
--msgstr "brakuje `{' w `%s'"
-+msgstr "brakuje `{' w %s"
+ msgid "%d rule useless in grammar"
+ msgid_plural "%d rules useless in grammar"
+-msgstr[0] "regu³a bezu¿yteczna w gramatyce"
+-msgstr[1] "regu³a bezu¿yteczna w gramatyce"
+-msgstr[2] "regu³a bezu¿yteczna w gramatyce"
++msgstr[0] "%d regu³a bezu¿yteczna w gramatyce"
++msgstr[1] "%d regu³y bezu¿yteczne w gramatyce"
++msgstr[2] "%d regu³ bezu¿ytecznych w gramatyce"
  
- #: src/scan-gram.l:640
- msgid "stray `$'"
--msgstr ""
-+msgstr "zab³±kany `$'"
- 
- #: src/scan-gram.l:644
- msgid "stray `@'"
--msgstr ""
-+msgstr "zab³±kany `@'"
- 
- #: src/scan-gram.l:776 src/scan-gram.l:1087
- msgid "line number overflow"
--msgstr ""
-+msgstr "przepe³nienie numeru linii"
- 
- #: src/scan-gram.l:778
- msgid "column number overflow"
--msgstr ""
-+msgstr "przepe³nienie numeru kolumny"
- 
- #: src/scan-gram.l:861
+ #: src/reduce.c:428
  #, c-format
-@@ -505,7 +490,7 @@
- 
- #: src/scan-gram.l:1103
- msgid "rule is too long"
--msgstr ""
-+msgstr "zbyt d³uga regu³a"
- 
- #: src/scan-gram.l:1131
- #, c-format
-@@ -518,9 +503,9 @@
- msgstr "brakuj±cy `%s' na koñcu linii"
- 
- #: src/symlist.c:145
--#, fuzzy, c-format
-+#, c-format
- msgid "invalid $ value: $%d"
--msgstr "nieprawid³owa warto¶æ: %s"
-+msgstr "nieprawid³owa warto¶æ $: $%d"
- 
- #: src/symtab.c:71
- #, c-format
-@@ -542,7 +527,7 @@
- msgstr "zredefiniowany symbol %s"
- 
- #: src/symtab.c:213
--#, fuzzy, c-format
-+#, c-format
- msgid "symbol %s redeclared"
- msgstr "zredefiniowany symbol %s"
- 
-@@ -554,9 +539,7 @@
- #: src/symtab.c:257
- #, c-format
- msgid "symbol %s is used, but is not defined as a token and has no rules"
--msgstr ""
--"u¿yty symbol %s nie jest zdefiniowany jako symbol leksykalny i nie posiada "
--"regu³"
-+msgstr "u¿yty symbol %s nie jest zdefiniowany jako symbol leksykalny i nie posiada regu³"
- 
- #: src/symtab.c:282
- #, c-format
-@@ -792,82 +775,3 @@
+@@ -867,146 +875,3 @@
  #, c-format
  msgid "time in %s: %ld.%06ld (%ld%%)\n"
  msgstr "czas w %s: %ld.%06ld (%ld%%)\n"
+-
+-#~ msgid "%d nonterminal"
+-#~ msgid_plural "%d nonterminals"
+-#~ msgstr[0] "%d nieterminal"
+-#~ msgstr[1] "%d nieterminale"
+-#~ msgstr[2] "%d nieterminali"
+-
+-#~ msgid " and "
+-#~ msgstr " i "
+-
+-#~ msgid "%d rule"
+-#~ msgid_plural "%d rules"
+-#~ msgstr[0] "%d regu³a"
+-#~ msgstr[1] "%d regu³y"
+-#~ msgstr[2] "%d regu³"
+-
+-#~ msgid ""
+-#~ "If a long option shows an argument as mandatory, then it is mandatory\n"
+-#~ "for the equivalent short option also.  Similarly for optional arguments.\n"
+-#~ msgstr ""
+-#~ "Je¶li d³uga opcja posiada obowi±zkowy argument, to wtedy obowi±zkowy "
+-#~ "jest\n"
+-#~ "on tak¿e dla równowa¿nej jej opcji krótkiej.  Podobnie jest dla "
+-#~ "argumentów\n"
+-#~ "opcjonalnych.\n"
+-
+-#~ msgid "Rules never reduced"
+-#~ msgstr "Regu³y nieredukowalne"
+-
+-#~ msgid "useless rule"
+-#~ msgstr "bezu¿yteczna regu³a"
+-
+-#~ msgid "useless nonterminal: %s"
+-#~ msgstr "bezu¿yteczny symbol nieterminalny: %s"
+-
+-#~ msgid "Useless nonterminals"
+-#~ msgstr "Bezu¿yteczne symbole nieterminalne"
+-
+-#~ msgid "Terminals which are not used"
+-#~ msgstr "Symbole terminalne, które nie s± u¿yte"
+-
+-#~ msgid "Useless rules"
+-#~ msgstr "Bezu¿yteczne regu³y"
+-
+-#~ msgid "%d rule never reduced\n"
+-#~ msgid_plural "%d rules never reduced\n"
+-#~ msgstr[0] "%d nieredukowalna regu³a\n"
+-#~ msgstr[1] "%d nieredukowalne regu³y\n"
+-#~ msgstr[2] "%d nieredukowalnych regu³\n"
+-
+-#~ msgid "warning: "
+-#~ msgstr "ostrze¿enie: "
+-
+-#~ msgid "missing `{' in %s"
+-#~ msgstr "brakuje `{' w %s"
+-
+-#~ msgid "subsidiary program `%s' not found"
+-#~ msgstr "dodatkowy program `%s' nie znaleziony"
+-
+-#~ msgid "subsidiary program `%s' failed"
+-#~ msgstr "dodatkowy program `%s' nie powiód³ siê"
+-
+-#~ msgid "subsidiary program `%s' failed (exit status %d)"
+-#~ msgstr "dodatkowy program `%s' nie powiód³ siê (kod wyj¶cia %d)"
 -
 -#~ msgid "syntax error: cannot back up"
 -#~ msgstr "b³±d sk³adni: nie mo¿na cofn±æ przesuniêcia symbolu leksykalnego"
