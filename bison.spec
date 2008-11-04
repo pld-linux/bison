@@ -8,22 +8,23 @@ Summary(ru.UTF-8):	Bison - генератор парсеров GNU
 Summary(tr.UTF-8):	GNU ayrıştırıcı üreticisi
 Summary(uk.UTF-8):	Bison - генератор парсерів GNU
 Name:		bison
-Version:	2.3
-Release:	2
-License:	GPL
+Version:	2.4
+Release:	1
+License:	GPL v3+
 Group:		Development/Tools
 Source0:	http://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.bz2
-# Source0-md5:	c18640c6ec31a169d351e3117ecce3ec
+# Source0-md5:	f95cc7d7f5290157a23216391dec610d
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
+URL:		http://gnu.org/software/bison/
 BuildRequires:	automake
 BuildRequires:	flex
 BuildRequires:	gettext-devel >= 0.12
-BuildRequires:	m4 >= 1.4.3
+BuildRequires:	m4 >= 1.4.6
 BuildRequires:	texinfo >= 4.0
 Requires:	%{name}-runtime = %{version}-%{release}
-Requires:	m4 >= 1.4.3
+Requires:	m4 >= 1.4.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		pkgdatadir	%{_datadir}/bison
@@ -126,10 +127,10 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files -f %{name}.lang
@@ -139,11 +140,11 @@ rm -rf $RPM_BUILD_ROOT
 # would conflict with byacc (but is not 100% compatible)
 #%attr(755,root,root) %{_bindir}/yacc
 %{pkgdatadir}
-%{_libdir}/lib*.a
+%{_libdir}/liby.a
 %{_aclocaldir}/bison-i18n.m4
-%{_mandir}/man1/*
-%lang(pl) %{_mandir}/pl/man1/*
-%{_infodir}/*.info*
+%{_mandir}/man1/bison.1*
+%lang(pl) %{_mandir}/pl/man1/bison.1*
+%{_infodir}/bison.info*
 
 %files runtime -f %{name}-runtime.lang
 %defattr(644,root,root,755)
