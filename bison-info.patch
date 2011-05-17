@@ -1,14 +1,14 @@
---- bison-2.1/doc/bison.texinfo.orig	2005-09-16 13:26:43.000000000 +0200
-+++ bison-2.1/doc/bison.texinfo	2005-10-22 23:29:17.757997112 +0200
-@@ -62,9 +62,9 @@
+--- bison-2.5/doc/bison.texinfo.orig	2011-05-15 00:17:12.000000000 +0200
++++ bison-2.5/doc/bison.texinfo	2011-05-17 17:15:02.281008949 +0200
+@@ -52,9 +52,9 @@
  @end quotation
  @end copying
  
 -@dircategory Software development
 +@dircategory Programming tools:
  @direntry
--* bison: (bison).       @acronym{GNU} parser generator (Yacc replacement).
-+* bison: (bison).			@acronym{GNU} parser generator (Yacc replacement)
+-* bison: (bison).       GNU parser generator (Yacc replacement).
++* bison: (bison).			GNU parser generator (Yacc replacement)
  @end direntry
  
- @ifset shorttitlepage-enabled
+ @titlepage
