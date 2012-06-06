@@ -8,21 +8,23 @@ Summary(ru.UTF-8):	Bison - генератор парсеров GNU
 Summary(tr.UTF-8):	GNU ayrıştırıcı üreticisi
 Summary(uk.UTF-8):	Bison - генератор парсерів GNU
 Name:		bison
-Version:	2.5
+Version:	2.5.1
 Release:	1
 License:	GPL v3+
 Group:		Development/Tools
-Source0:	http://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.bz2
-# Source0-md5:	9dba20116b13fc61a0846b0058fbe004
+Source0:	http://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.xz
+# Source0-md5:	012708d801a3c986d8654aa673530b61
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 URL:		http://gnu.org/software/bison/
 BuildRequires:	automake >= 1:1.11.1
 BuildRequires:	flex
-BuildRequires:	gettext-devel >= 0.12
+BuildRequires:	gettext-devel >= 0.18
 BuildRequires:	m4 >= 1.4.6
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.0
+BuildRequires:	xz
 Requires:	%{name}-runtime = %{version}-%{release}
 Requires:	m4 >= 1.4.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
