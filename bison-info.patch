@@ -1,5 +1,5 @@
---- bison-2.5/doc/bison.texinfo.orig	2011-05-15 00:17:12.000000000 +0200
-+++ bison-2.5/doc/bison.texinfo	2011-05-17 17:15:02.281008949 +0200
+--- bison-2.6.1/doc/bison.texi.orig	2011-05-15 00:17:12.000000000 +0200
++++ bison-2.6.1/doc/bison.texi	2011-05-17 17:15:02.281008949 +0200
 @@ -52,9 +52,9 @@
  @end quotation
  @end copying

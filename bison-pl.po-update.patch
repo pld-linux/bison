@@ -1,22 +1,14 @@
---- bison-2.5.1/po/pl.po.orig	2012-06-05 10:07:30.000000000 +0200
-+++ bison-2.5.1/po/pl.po	2012-06-06 20:19:07.288976370 +0200
-@@ -5,7 +5,7 @@
- #
- msgid ""
- msgstr ""
--"Project-Id-Version: bison 2.5.1-rc2\n"
-+"Project-Id-Version: bison 2.5.1\n"
- "Report-Msgid-Bugs-To: bug-bison@gnu.org\n"
- "POT-Creation-Date: 2012-06-05 10:07+0200\n"
- "PO-Revision-Date: 2012-06-01 21:48+0200\n"
-@@ -131,6 +131,10 @@
- "canonical LR(1) support is experimental.\n"
- "\n"
- msgstr ""
-+"Tworzenie analizatorów składni: deterministycznych LR lub uogólnionych\n"
-+"LR (GLR), wykorzystujących tablice analizatorów LALR(1), IELR(1) lub\n"
-+"zwykłe LR(1). Obsługa IELR(1) i zwykłych LR(1) jest eksperymentalna.\n"
-+"\n"
+--- bison-2.6.1/po/pl.po.orig	2012-07-27 17:17:51.000000000 +0200
++++ bison-2.6.1/po/pl.po	2012-07-30 19:04:54.961351937 +0200
+@@ -584,9 +584,9 @@
+ msgstr "początkowy symbol %s nie dziedziczy żadnego zdania"
  
- #: src/getargs.c:288
- msgid ""
+ #: src/scan-code.l:188
+-#, fuzzy, c-format
++#, c-format
+ msgid "stray '%s'"
+-msgstr "zabłąkany '$'"
++msgstr "zabłąkany '%s'"
+ 
+ #: src/scan-code.l:227
+ #, c-format
