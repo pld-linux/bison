@@ -19,7 +19,7 @@ Patch0:		%{name}-info.patch
 URL:		http://gnu.org/software/bison/
 BuildRequires:	automake >= 1:1.11.1
 BuildRequires:	flex
-BuildRequires:	gettext-devel >= 0.18
+BuildRequires:	gettext-tools >= 0.18
 BuildRequires:	m4 >= 1.4.6
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.0
