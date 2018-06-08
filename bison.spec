@@ -8,18 +8,19 @@ Summary(ru.UTF-8):	Bison - генератор парсеров GNU
 Summary(tr.UTF-8):	GNU ayrıştırıcı üreticisi
 Summary(uk.UTF-8):	Bison - генератор парсерів GNU
 Name:		bison
-Version:	3.0.4
-Release:	2
+Version:	3.0.5
+Release:	1
 License:	GPL v3+
 Group:		Development/Tools
 Source0:	http://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.xz
-# Source0-md5:	c342201de104cc9ce0a21e0ad10d4021
+# Source0-md5:	3e54f20988ecd1b62044e25481e5f06b
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 URL:		http://gnu.org/software/bison/
-BuildRequires:	automake >= 1:1.11.1
 BuildRequires:	flex
 BuildRequires:	gettext-tools >= 0.18
+BuildRequires:	help2man
+BuildRequires:	libxslt-progs
 BuildRequires:	m4 >= 1.4.6
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.0
@@ -27,8 +28,6 @@ BuildRequires:	xz
 Requires:	%{name}-runtime = %{version}-%{release}
 Requires:	m4 >= 1.4.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		pkgdatadir	%{_datadir}/bison
 
 %description
 Bison is a general purpose parser generator which converts a grammar
@@ -106,21 +105,26 @@ zawierajacych parsery wygenerowane przez bisona.
 %{__rm} po/stamp-po
 
 %build
-cp -f /usr/share/automake/config.sub config
 %configure \
 	--disable-silent-rules
-%{__make} \
-	pkgdatadir=%{pkgdatadir}
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgdatadir=%{pkgdatadir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/pl/man1/bison.1
+
+# provided by byacc (bison is not 100% compatible)
+%{__rm} $RPM_BUILD_ROOT{%{_bindir}/yacc,%{_mandir}/man1/yacc.1}
+
+install -d $RPM_BUILD_ROOT%{_examplesdir}
+%{__mv} $RPM_BUILD_ROOT%{_docdir}/bison/examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+# the rest is packaged as %doc
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/bison
 
 %find_lang %{name}
 %find_lang %{name}-runtime
@@ -138,14 +142,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/bison
-# would conflict with byacc (but is not 100% compatible)
-#%attr(755,root,root) %{_bindir}/yacc
-%{pkgdatadir}
 %{_libdir}/liby.a
+%{_datadir}/bison
 %{_aclocaldir}/bison-i18n.m4
 %{_mandir}/man1/bison.1*
 %lang(pl) %{_mandir}/pl/man1/bison.1*
 %{_infodir}/bison.info*
+%{_examplesdir}/%{name}-%{version}
 
 %files runtime -f %{name}-runtime.lang
 %defattr(644,root,root,755)
