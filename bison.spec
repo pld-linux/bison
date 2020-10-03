@@ -8,12 +8,12 @@ Summary(ru.UTF-8):	Bison - генератор парсеров GNU
 Summary(tr.UTF-8):	GNU ayrıştırıcı üreticisi
 Summary(uk.UTF-8):	Bison - генератор парсерів GNU
 Name:		bison
-Version:	3.7.1
+Version:	3.7.2
 Release:	1
 License:	GPL v3+
 Group:		Development/Tools
 Source0:	https://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.lz
-# Source0-md5:	8e536f9862b40addcbfa9a1ada7aceb2
+# Source0-md5:	e64a79e755e55874a6462c24f6e4825e
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/bison/
