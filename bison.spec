@@ -1,3 +1,4 @@
+%bcond_without	libtextstyle	# don't require libtextstyle
 Summary:	A GNU general-purpose parser generator
 Summary(de.UTF-8):	GNU-Parser-Generator
 Summary(es.UTF-8):	Generador de parser de la GNU
@@ -21,7 +22,7 @@ BuildRequires:	flex
 BuildRequires:	gcc >= 5:3.2
 BuildRequires:	gettext-tools >= 0.19
 BuildRequires:	help2man
-BuildRequires:	libtextstyle-devel >= 0.20.5
+%{?with_libtextstyle:BuildRequires:	libtextstyle-devel >= 0.20.5}
 BuildRequires:	libxslt-progs
 BuildRequires:	lzip
 BuildRequires:	m4 >= 1.4.6
