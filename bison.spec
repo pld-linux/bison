@@ -17,6 +17,7 @@ Source0:	https://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.lz
 # Source0-md5:	26e76218c2a50a0dd307286d42eb0af9
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
+Patch1:		no_libtextstyle.patch
 URL:		http://www.gnu.org/software/bison/
 BuildRequires:	flex
 BuildRequires:	gcc >= 5:3.2
@@ -31,7 +32,7 @@ BuildRequires:	rpmbuild(find_lang) >= 1.31
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.0
 Requires:	%{name}-runtime = %{version}-%{release}
-Requires:	libtextstyle >= 0.20.5
+%{?with_libtextstyle:Requires:	libtextstyle >= 0.20.5}
 Requires:	m4 >= 1.4.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -107,10 +108,15 @@ zawierajacych parsery wygenerowane przez bisona.
 %prep
 %setup -q
 %patch0 -p1
+%{!?with_libtextstyle:%patch1 -p1}
 
 %{__rm} po/stamp-po
 
 %build
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--disable-silent-rules
 %{__make}

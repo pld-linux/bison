@@ -1,0 +1,21 @@
+diff -ur bison-3.8.2.orig/m4/libtextstyle-optional.m4 bison-3.8.2/m4/libtextstyle-optional.m4
+--- bison-3.8.2.orig/m4/libtextstyle-optional.m4	2021-03-10 06:41:25.000000000 +0100
++++ bison-3.8.2/m4/libtextstyle-optional.m4	2022-08-28 12:38:58.097300031 +0200
+@@ -21,14 +21,9 @@
+ 
+ AC_DEFUN([gl_LIBTEXTSTYLE_OPTIONAL],
+ [
+-  gl_LIBTEXTSTYLE([$1])
+-  if test $HAVE_LIBTEXTSTYLE = yes; then
+-    TEXTSTYLE_H=
+-  else
+-    TEXTSTYLE_H=textstyle.h
+-    AC_REQUIRE([AC_C_INLINE])
+-    AC_CHECK_FUNCS_ONCE([tcdrain])
+-  fi
++  TEXTSTYLE_H=textstyle.h
++  AC_REQUIRE([AC_C_INLINE])
++  AC_CHECK_FUNCS_ONCE([tcdrain])
+   AC_SUBST([TEXTSTYLE_H])
+   AM_CONDITIONAL([GL_GENERATE_TEXTSTYLE_H], [test -n "$TEXTSTYLE_H"])
+ ])
