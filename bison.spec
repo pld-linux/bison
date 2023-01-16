@@ -1,4 +1,7 @@
-%bcond_without	libtextstyle	# don't require libtextstyle
+#
+# Conditional build:
+%bcond_without	libtextstyle	# libtextstyle support
+
 Summary:	A GNU general-purpose parser generator
 Summary(de.UTF-8):	GNU-Parser-Generator
 Summary(es.UTF-8):	Generador de parser de la GNU
