@@ -13,7 +13,7 @@ Summary(tr.UTF-8):	GNU ayrıştırıcı üreticisi
 Summary(uk.UTF-8):	Bison - генератор парсерів GNU
 Name:		bison
 Version:	3.8.2
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Development/Tools
 Source0:	https://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.lz
@@ -21,7 +21,9 @@ Source0:	https://ftp.gnu.org/gnu/bison/%{name}-%{version}.tar.lz
 Source1:	%{name}.1.pl
 Patch0:		%{name}-info.patch
 Patch1:		no_libtextstyle.patch
-URL:		http://www.gnu.org/software/bison/
+Patch2:		%{name}-CVE-2026-56389.patch
+Patch3:		%{name}-CVE-2026-56390.patch
+URL:		https://www.gnu.org/software/bison/
 BuildRequires:	flex
 BuildRequires:	gcc >= 5:3.2
 BuildRequires:	gettext-tools >= 0.19
@@ -111,7 +113,9 @@ zawierajacych parsery wygenerowane przez bisona.
 %prep
 %setup -q
 %patch -P0 -p1
-%{!?with_libtextstyle:%patch1 -p1}
+%{!?with_libtextstyle:%patch -P1 -p1}
+%patch -P2 -p1
+%patch -P3 -p1
 
 %{__rm} po/stamp-po
 
@@ -140,6 +144,9 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}
 %{__mv} $RPM_BUILD_ROOT%{_docdir}/bison/examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 # the rest is packaged as %doc
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/bison
+
+# header-only catalog (no translated messages), skipped by find_lang
+%{__rm} $RPM_BUILD_ROOT%{_localedir}/ro/LC_MESSAGES/bison-gnulib.mo
 
 %find_lang %{name}
 %find_lang %{name}-gnulib -a %{name}.lang
